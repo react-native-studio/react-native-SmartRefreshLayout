@@ -54,5 +54,6 @@ import {SmartRefreshControl,ClassicsHeader,StoreHouseHeader} from 'react-native-
 |lineWidth|number|线宽|
 ## 示例
 <!--![image](https://github.com/2534290808/react-native-android-danmaku/blob/master/images/Screenshot_1513176625.png)-->
-<!--<img src="https://github.com/2534290808/react-native-android-danmaku/blob/master/images/Screenshot_1513176625.png" width = "300"  alt="图片名称" align=center /-->
+<img src="https://github.com/react-native-studio/react-native-smartrefreshlayout/blob/master/images/Screenshot_1520489605.png" width = "300"  alt="图片名称" align=center />
+<img src="https://github.com/react-native-studio/react-native-smartrefreshlayout/blob/master/images/Screenshot_1520489593.png" width = "300"  alt="图片名称" align=center />
 
