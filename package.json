@@ -1,0 +1,28 @@
+{
+  "name": "react-native-smartrefreshlayout",
+  "version": "0.0.1",
+  "description": "基于android SmartRefreshLayout的封装",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-native-studio/react-native-SmartRefreshLayout.git"
+  },
+  "keywords": [
+    "react",
+    "react",
+    "native",
+    "pull",
+    "refresh",
+    "refreshcontrol",
+    "refreshlayout"
+  ],
+  "author": "react-native-studio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/react-native-studio/react-native-SmartRefreshLayout/issues"
+  },
+  "homepage": "https://github.com/react-native-studio/react-native-SmartRefreshLayout#readme"
+}
