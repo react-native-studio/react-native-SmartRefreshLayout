@@ -25,4 +25,8 @@
     "url": "https://github.com/react-native-studio/react-native-SmartRefreshLayout/issues"
   },
   "homepage": "https://github.com/react-native-studio/react-native-SmartRefreshLayout#readme"
+  "dependencies": {
+    "prop-types":"*"
+  }
 }
+
