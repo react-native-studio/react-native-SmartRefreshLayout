@@ -39,15 +39,22 @@ class SmartRefreshControl extends Component {
         }
         return <ClassicsHeader/>
     }
+    _onSmartRefresh=()=>{
+        this.props.onRefresh && this.props.onRefresh();
+    }
     //TODO://还未实现
     renderFooter=()=>{
         return null;
     }
     render() {
+        const nativeProps = Object.assign({},...this.props);
+        Object.assign(nativeProps, {
+            onSmartRefresh:this._onSmartRefresh,
+        });
         return (
             <SmartRefreshLayout
                 ref="refreshLayout"
-                {...this.props}
+                {...nativeProps}
             >
                 {this.renderHeader()}
                 {this.props.children}
