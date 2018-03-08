@@ -6,7 +6,6 @@ import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.scwang.smartrefresh.layout.internal.ProgressDrawable;
 
 /**
  * Created by painter.g on 2018/3/7.
@@ -20,9 +19,7 @@ public class ClassicsHeaderManager extends SimpleViewManager<ClassicsHeader> {
 
     @Override
     protected ClassicsHeader createViewInstance(ThemedReactContext reactContext) {
-        ProgressDrawable drawable=new ProgressDrawable();
-        drawable.setColor(Color.parseColor("red"));
-        return new ClassicsHeader(reactContext).setProgressDrawable(drawable);
+        return new ClassicsHeader(reactContext);
     }
 
     /**

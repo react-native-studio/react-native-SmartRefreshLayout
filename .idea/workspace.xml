@@ -2,33 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5f66252-ad81-4603-82e1-4febf926e834" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/react-native-SmartRefreshLayout.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ClassicsHeader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MaterialHeader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SmartRefreshControl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StoreHouseHeader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/proguard-rules.pro" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/smartrefreshlayout.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/androidTest/java/com/lmy/smartrefreshlayout/ExampleInstrumentedTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/ClassicsHeaderManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/MaterialHeaderManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/ReactClassicsFooter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/ReactClassicsHeader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/StoreHouseHeaderManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/Events.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/HeaderType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/ReactSmartRefreshLayout.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/SmartRefreshLayoutManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/SmartRefreshLayoutPackage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/res/values/strings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/test/java/com/lmy/smartrefreshlayout/ExampleUnitTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/ClassicsHeaderManager.java" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/ClassicsHeaderManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/SmartRefreshLayoutPackage.java" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/SmartRefreshLayoutPackage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -86,8 +61,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/android/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -168,6 +153,41 @@
               <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="values" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -183,6 +203,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/android/src" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/android" />
     </key>
@@ -209,12 +230,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1520481526017</updated>
-      <workItem from="1520481528149" duration="1041000" />
+      <workItem from="1520481528149" duration="1292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1041000" />
+    <option name="totallyTimeSpent" value="1292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -296,6 +317,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
