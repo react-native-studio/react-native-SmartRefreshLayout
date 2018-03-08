@@ -26,7 +26,7 @@ import {SmartRefreshControl,ClassicsHeader,StoreHouseHeader} from 'react-native-
 ## 组件
 ### SmartRefreshControl
 #### 属性表格
-|name|format|description|
+|属性名|类型|描述|
 |:---:|:---:|:---:|
 |onRefresh|func|刷新触发|
 |enableRefresh|bool|是否启用刷新|
@@ -34,9 +34,16 @@ import {SmartRefreshControl,ClassicsHeader,StoreHouseHeader} from 'react-native-
 
 注意：HeaderComponet现在只能是插件提供的Header，后续我们将改进与提供任何Component
 #### 方法表格
-|name|format|description|
+|方法名|参数|描述|
 |:---:|:---:|:---:|
 |finishRefresh|{delayed:number,success:bool}|完成刷新|
+
+### ClassicsHeader
+#### 属性表格
+|属性名|类型|描述|
+|:---:|:---:|:---:|
+|primaryColor|string|主题色|
+|accentColor|string|强调色|
 ## 示例
 <!--![image](https://github.com/2534290808/react-native-android-danmaku/blob/master/images/Screenshot_1513176625.png)-->
 <!--<img src="https://github.com/2534290808/react-native-android-danmaku/blob/master/images/Screenshot_1513176625.png" width = "300"  alt="图片名称" align=center /-->
