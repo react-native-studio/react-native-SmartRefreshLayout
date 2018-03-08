@@ -44,6 +44,14 @@ import {SmartRefreshControl,ClassicsHeader,StoreHouseHeader} from 'react-native-
 |:---:|:---:|:---:|
 |primaryColor|string|主题色|
 |accentColor|string|强调色|
+
+### StoreHouseHeader
+#### 属性表格
+|属性名|类型|描述|
+|:---:|:---:|:---:|
+|text|string|文字(目前只支持英文)|
+|textColor|string|文字颜色|
+|lineWidth|number|线宽|
 ## 示例
 <!--![image](https://github.com/2534290808/react-native-android-danmaku/blob/master/images/Screenshot_1513176625.png)-->
 <!--<img src="https://github.com/2534290808/react-native-android-danmaku/blob/master/images/Screenshot_1513176625.png" width = "300"  alt="图片名称" align=center /-->
