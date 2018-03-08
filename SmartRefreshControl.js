@@ -4,12 +4,11 @@ import {
     View,
     Text,
     requireNativeComponent,
-    ViewPropTypes,
     findNodeHandle,
     UIManager,
 } from 'react-native';
-import PropTypes from 'prop-types';
 import ClassicsHeader from "./ClassicsHeader";
+import {ViewPropTypes,PropTypes} from './Util'
 
 const SmartRefreshLayout = requireNativeComponent('SmartRefreshLayout', SmartRefreshControl);
 
