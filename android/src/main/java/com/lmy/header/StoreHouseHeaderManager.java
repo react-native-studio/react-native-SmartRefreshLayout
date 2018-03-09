@@ -65,6 +65,13 @@ public class StoreHouseHeaderManager extends SimpleViewManager<StoreHouseHeader>
     public void setLineWidth(StoreHouseHeader view,int lineWidth){
         view.setLineWidth(lineWidth);
     }
+
+    /**
+     * 设置dropHeight
+     * TODO:似乎还没有作用
+     * @param view
+     * @param dropHeight
+     */
     @ReactProp(name="dropHeight")
     public void setDropHeight(StoreHouseHeader view,int dropHeight){
         view.setDropHeight(dropHeight);

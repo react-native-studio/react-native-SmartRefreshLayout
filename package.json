@@ -1,6 +1,6 @@
 {
   "name": "react-native-smartrefreshlayout",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "基于android SmartRefreshLayout的封装",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/react-native-studio/react-native-SmartRefreshLayout/issues"
   },
-  "homepage": "https://github.com/react-native-studio/react-native-SmartRefreshLayout#readme"
+  "homepage": "https://github.com/react-native-studio/react-native-SmartRefreshLayout#readme",
   "dependencies": {
     "prop-types":"*"
   }

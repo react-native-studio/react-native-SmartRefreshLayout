@@ -36,7 +36,7 @@ class SmartRefreshControl extends Component {
         if(HeaderComponent){
             return HeaderComponent;
         }
-        return <ClassicsHeader/>
+        return <View><Text></Text></View>
     }
     _onSmartRefresh=()=>{
         this.props.onRefresh && this.props.onRefresh();

@@ -9,6 +9,7 @@ import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
+import com.lmy.header.AnyHeader;
 import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -115,7 +116,13 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
     public void addView(ReactSmartRefreshLayout parent, View child, int index) {
         switch (index){
             case 0:
-                RefreshHeader header=(RefreshHeader)child;
+                RefreshHeader header;
+                if(child instanceof RefreshHeader){
+                    header=(RefreshHeader)child;
+                }else{
+                    header=new AnyHeader(themedReactContext);
+                    ((AnyHeader)header).setView(child);
+                }
                 parent.setRefreshHeader(header);
                 break;
             case 1:
