@@ -46,10 +46,9 @@ class SmartRefreshControl extends Component {
         return null;
     }
     render() {
-        const nativeProps = Object.assign({},...this.props);
-        Object.assign(nativeProps, {
+        const nativeProps ={...this.props,...{
             onSmartRefresh:this._onSmartRefresh,
-        });
+        }}
         return (
             <SmartRefreshLayout
                 ref="refreshLayout"
