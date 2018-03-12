@@ -26,6 +26,8 @@ class DefaultHeader extends Component {
 }
 
 DefaultHeader.propTypes = {
+    primaryColor:PropTypes.string,
+    accentColor:PropTypes.string,
     ...ViewPropTypes,
 }
 export default DefaultHeader;

@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5f66252-ad81-4603-82e1-4febf926e834" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AnyHeader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DefaultHeader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/AnyHeaderManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/DefaultHeader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/DefaultHeaderMananger.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartRefreshControl.js" afterPath="$PROJECT_DIR$/SmartRefreshControl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/AnyHeader.java" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/AnyHeader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/SmartRefreshLayoutManager.java" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/SmartRefreshLayoutManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/SmartRefreshLayoutPackage.java" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/SmartRefreshLayoutPackage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DefaultHeader.js" afterPath="$PROJECT_DIR$/DefaultHeader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/DefaultHeader.java" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/DefaultHeader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/DefaultHeaderMananger.java" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/DefaultHeaderMananger.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -191,6 +185,51 @@
               <item name="android" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="lmy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="lmy" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -241,7 +280,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6432000" />
+    <option name="totallyTimeSpent" value="6669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />

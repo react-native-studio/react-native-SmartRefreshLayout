@@ -29,6 +29,10 @@ public class DefaultHeader extends LinearLayout implements RefreshHeader {
     private PathsView mArrowView;//下拉箭头
     private ImageView mProgressView;//刷新动画视图
     private ProgressDrawable mProgressDrawable;//刷新动画
+    protected RefreshKernel mRefreshKernel;
+    protected int mBackgroundColor;
+    protected int mAccentColor;
+
     public DefaultHeader(Context context) {
         super(context);
         this.initView(context);
@@ -43,7 +47,6 @@ public class DefaultHeader extends LinearLayout implements RefreshHeader {
         super(context, attrs, defStyleAttr);
         this.initView(context);
     }
-
 
 
     private void initView(Context context) {
@@ -62,28 +65,33 @@ public class DefaultHeader extends LinearLayout implements RefreshHeader {
         addView(mHeaderText, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         setMinimumHeight(DensityUtil.dp2px(60));
     }
+
     @NonNull
     public View getView() {
         return this;//真实的视图就是自己，不能返回null
     }
+
     @Override
     public SpinnerStyle getSpinnerStyle() {
         return SpinnerStyle.Translate;//指定为平移，不能null
     }
+
     @Override
     public void onStartAnimator(RefreshLayout layout, int headHeight, int extendHeight) {
         mProgressDrawable.start();//开始动画
     }
+
     @Override
     public int onFinish(RefreshLayout layout, boolean success) {
         mProgressDrawable.stop();//停止动画
-        if (success){
+        if (success) {
             mHeaderText.setText("刷新完成");
         } else {
             mHeaderText.setText("刷新失败");
         }
         return 500;//延迟500毫秒之后再弹回
     }
+
     @Override
     public void onStateChanged(RefreshLayout refreshLayout, RefreshState oldState, RefreshState newState) {
         switch (newState) {
@@ -105,19 +113,27 @@ public class DefaultHeader extends LinearLayout implements RefreshHeader {
                 break;
         }
     }
+
     @Override
     public boolean isSupportHorizontalDrag() {
         return false;
     }
+
     @Override
     public void onInitialized(RefreshKernel kernel, int height, int extendHeight) {
+        mRefreshKernel = kernel;
+        mRefreshKernel.requestDrawBackgroundForHeader(mBackgroundColor);
+
     }
+
     @Override
     public void onHorizontalDrag(float percentX, int offsetX, int offsetMax) {
     }
+
     @Override
     public void onPulling(float percent, int offset, int headHeight, int extendHeight) {
     }
+
     @Override
     public void onReleasing(float percent, int offset, int headHeight, int extendHeight) {
     }
@@ -128,6 +144,26 @@ public class DefaultHeader extends LinearLayout implements RefreshHeader {
     }
 
     @Override
-    public void setPrimaryColors(@ColorInt int ... colors){
+    public void setPrimaryColors(@ColorInt int... colors) {
     }
+
+    public DefaultHeader setPrimaryColor(@ColorInt int primaryColor) {
+        mBackgroundColor = primaryColor;
+        if (mRefreshKernel != null) {
+            mRefreshKernel.requestDrawBackgroundForHeader(primaryColor);
+        }
+        return this;
+    }
+    public DefaultHeader setAccentColor(int accentColor){
+        mAccentColor=accentColor;
+        if(mArrowView!=null){
+            mArrowView.parserColors(accentColor);
+        }
+        if(mProgressDrawable!=null) {
+            mProgressDrawable.setColor(accentColor);
+        }
+        mHeaderText.setTextColor(accentColor);
+        return this;
+    }
+
 }
