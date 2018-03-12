@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import ClassicsHeader from "./ClassicsHeader";
 import {ViewPropTypes,PropTypes} from './Util'
+import DefaultHeader from "./DefaultHeader";
 
 const SmartRefreshLayout = requireNativeComponent('SmartRefreshLayout', SmartRefreshControl);
 
@@ -34,9 +35,11 @@ class SmartRefreshControl extends Component {
     renderHeader=()=>{
         const {HeaderComponent}=this.props;
         if(HeaderComponent){
-            return HeaderComponent;
+            return React.cloneElement(HeaderComponent,{
+                key:'header'
+            });
         }
-        return <View><Text></Text></View>
+        return <DefaultHeader/>
     }
     _onSmartRefresh=()=>{
         this.props.onRefresh && this.props.onRefresh();
@@ -55,8 +58,12 @@ class SmartRefreshControl extends Component {
                 {...nativeProps}
             >
                 {this.renderHeader()}
-                {this.props.children}
-                {this.renderFooter()}
+                {React.cloneElement(
+                    this.props.children,
+                    {
+                        key:'content'
+                    }
+                )}
             </SmartRefreshLayout>
 
         )

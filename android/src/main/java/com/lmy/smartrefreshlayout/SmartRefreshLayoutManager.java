@@ -10,7 +10,6 @@ import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.lmy.header.AnyHeader;
-import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -124,13 +123,14 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
                     ((AnyHeader)header).setView(child);
                 }
                 parent.setRefreshHeader(header);
+                //parent.setRefreshHeader(new MaterialHeader(themedReactContext).setShowBezierWave(true));
                 break;
             case 1:
                 parent.setRefreshContent(child);
                 break;
             case 2:
-                RefreshFooter footer=(RefreshFooter)child;
-                parent.setRefreshFooter(footer);
+                //RefreshFooter footer=(RefreshFooter)child;
+                //parent.setRefreshFooter(footer);
                 break;
             default:break;
 

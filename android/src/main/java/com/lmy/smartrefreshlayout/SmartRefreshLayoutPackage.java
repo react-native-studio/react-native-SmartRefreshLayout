@@ -5,7 +5,9 @@ import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
+import com.lmy.header.AnyHeaderManager;
 import com.lmy.header.ClassicsHeaderManager;
+import com.lmy.header.DefaultHeaderMananger;
 import com.lmy.header.MaterialHeaderManager;
 import com.lmy.header.StoreHouseHeaderManager;
 
@@ -32,7 +34,9 @@ public class SmartRefreshLayoutPackage implements ReactPackage {
                 new SmartRefreshLayoutManager(),
                 new ClassicsHeaderManager(),
                 new StoreHouseHeaderManager(),
-                new MaterialHeaderManager()
+                new MaterialHeaderManager(),
+                new AnyHeaderManager(),
+                new DefaultHeaderMananger()
                 );
     }
 }
