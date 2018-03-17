@@ -4,12 +4,10 @@ import {
     View,
     Text,
     requireNativeComponent,
-    ViewPropTypes,
     findNodeHandle,
     UIManager,
 } from 'react-native';
-import PropTypes from 'prop-types';
-
+import {ViewPropTypes,PropTypes} from './Util'
 const RCTDefaultHeader = requireNativeComponent('RCTDefaultHeader', RCTDefaultHeader);
 
 class DefaultHeader extends Component {
@@ -17,7 +15,6 @@ class DefaultHeader extends Component {
     render() {
         return (
             <RCTDefaultHeader
-                ref="refreshLayout"
                 {...this.props}
             />
 

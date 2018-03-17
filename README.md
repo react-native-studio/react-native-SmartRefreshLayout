@@ -38,7 +38,7 @@ import {SmartRefreshControl,ClassicsHeader,StoreHouseHeader} from 'react-native-
 |:---:|:---:|:---:|
 |finishRefresh|{delayed:number,success:bool}|完成刷新|
 
-### ClassicsHeader
+### ClassicsHeader/DefaultHeader
 #### 属性表格
 |属性名|类型|描述|
 |:---:|:---:|:---:|

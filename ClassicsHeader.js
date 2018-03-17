@@ -15,7 +15,6 @@ class ClassicsHeader extends Component {
     render() {
         return (
             <RCTClassicsHeader
-                ref="refreshLayout"
                 {...this.props}
             />
 
