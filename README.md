@@ -12,7 +12,7 @@ import {SmartRefreshControl,ClassicsHeader,StoreHouseHeader} from 'react-native-
 //使用方法和RN官方的RefreshControl类似，
 <ScrollView 
   refreshControl={<SmartRefreshControl
-     ref={this.refreshControl=ref}
+     ref={refreshcontrol=>this.refreshControl=refreshcontrol}
      HeaderComponent={<ClassicsHeader/>}
      onRefresh={()=>{
        setTimeout(()=>{
