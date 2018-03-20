@@ -1,9 +1,11 @@
 package com.lmy.smartrefreshlayout;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.facebook.react.bridge.ReadableArray;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
@@ -94,6 +96,29 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
     @ReactProp(name="enableRefresh",defaultBoolean = true)
     public void setEnableRefresh(ReactSmartRefreshLayout view,boolean enableRefresh){
         view.setEnableRefresh(enableRefresh);
+    }
+
+    /**
+     * 是否启用自动刷新
+     * @param view
+     * @param autoRefresh
+     */
+    @ReactProp(name = "autoRefresh",defaultBoolean = false)
+    public void setAutoRefresh(ReactSmartRefreshLayout view, ReadableMap autoRefresh){
+        boolean isAutoRefresh=false;Integer time=null;
+        if(autoRefresh.hasKey("refresh")){
+            isAutoRefresh=autoRefresh.getBoolean("refresh");
+        }
+        if(autoRefresh.hasKey("time")){
+            time=autoRefresh.getInt("time");
+        }
+        if(isAutoRefresh==true){
+            if(time!=null && time>0){
+                view.autoRefresh(time);
+            }else{
+                view.autoRefresh();
+            }
+        }
     }
     @Override
     public void receiveCommand(ReactSmartRefreshLayout root, int commandId, @Nullable ReadableArray args) {

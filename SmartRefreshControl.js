@@ -75,6 +75,10 @@ SmartRefreshControl.propTypes = {
     onLoadMore: PropTypes.func,
     enableRefresh: PropTypes.bool,//是否启用下拉刷新功能
     HeaderComponent:PropTypes.object,
+    autoRefresh:PropTypes.shape({
+        refresh:PropTypes.bool,
+        time:PropTypes.number,
+    }),//是否启动自动刷新
     ...ViewPropTypes,
 }
 export default SmartRefreshControl;
