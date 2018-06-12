@@ -7,7 +7,8 @@ package com.lmy.smartrefreshlayout;
 public enum Events {
     REFRESH("onSmartRefresh"),
     LOADMORE("onLoadMore"),
-    HEADER_PULLING("onHeaderPulling");
+    HEADER_PULLING("onHeaderPulling"),
+    HEADER_RELEASING("onHeaderReleasing");
 
     private final String mName;
 

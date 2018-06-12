@@ -74,6 +74,7 @@ SmartRefreshControl.propTypes = {
     onRefresh: PropTypes.func,
     onLoadMore: PropTypes.func,
     onHeaderPulling:PropTypes.func,
+    onHeaderReleasing:PropTypes.func,
     enableRefresh: PropTypes.bool,//是否启用下拉刷新功能
     HeaderComponent:PropTypes.object,
     headerHeight:PropTypes.number,

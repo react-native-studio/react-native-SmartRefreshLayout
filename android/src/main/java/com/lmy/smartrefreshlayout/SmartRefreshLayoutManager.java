@@ -189,7 +189,11 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
 
             @Override
             public void onHeaderReleasing(RefreshHeader header, float percent, int offset, int headerHeight, int extendHeight) {
-
+                WritableMap writableMap = Arguments.createMap();
+                writableMap.putDouble("percent",percent);
+                writableMap.putDouble("offset",DensityUtil.px2dp(offset));
+                writableMap.putDouble("headerHeight",DensityUtil.px2dp(headerHeight));
+                mEventEmitter.receiveEvent(getTargetId(),Events.HEADER_RELEASING.toString(),writableMap);
             }
 
             @Override
