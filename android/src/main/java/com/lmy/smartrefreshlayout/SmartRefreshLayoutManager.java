@@ -4,17 +4,23 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.view.View;
 
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
+import com.facebook.react.uimanager.annotations.ReactPropGroup;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.lmy.header.AnyHeader;
+import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.List;
@@ -38,25 +44,6 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
 
     private static final String COMMAND_FINISH_REFRESH_NAME="finishRefresh";
     private static final int COMMAND_FINISH_REFRESH_ID=0;
-
-    static {
-        //设置全局的Header构建器
-       /* ReactSmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() {
-            @Override
-            public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
-                //layout.setPrimaryColorsId(R.color.colorPrimary, android.R.color.white);//全局设置主题颜色
-                return new ReactClassicsHeader(context).setEnableLastTime(false);//.setTimeFormat(new DynamicTimeFormat("更新于 %s"));//指定为经典Header，默认是 贝塞尔雷达Header
-            }
-        });
-        //设置全局的Footer构建器
-        ReactSmartRefreshLayout.setDefaultRefreshFooterCreator(new DefaultRefreshFooterCreator() {
-            @Override
-            public RefreshFooter createRefreshFooter(Context context, RefreshLayout layout) {
-                //指定为经典Footer，默认是 BallPulseFooter
-                return new ReactClassicsFooter(context);
-            }
-        });*/
-    }
 
     @Override
     public String getName() {
@@ -87,6 +74,19 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
         return MapBuilder.of(
                 COMMAND_FINISH_REFRESH_NAME,COMMAND_FINISH_REFRESH_ID
         );
+    }
+
+    /**
+     * 设置headerHeight
+     * @param view
+     * @param headerHeight
+     */
+    @ReactProp(name = "headerHeight")
+    public void setHeaderHeight(ReactSmartRefreshLayout view,float headerHeight){
+        if(headerHeight != 0.0f) {
+            view.setHeaderHeight(headerHeight);
+
+        }
     }
     /**
      * 是否启用下拉刷新功能
@@ -169,18 +169,73 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
 
     @Override
     protected void addEventEmitters(ThemedReactContext reactContext, ReactSmartRefreshLayout view) {
-        view.setOnRefreshListener(new OnRefreshListener() {
+        view.setOnMultiPurposeListener(new OnMultiPurposeListener() {
             @Override
-            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                //刷新触发
+            public void onHeaderPulling(RefreshHeader header, float percent, int offset, int headerHeight, int extendHeight) {
+                WritableMap writableMap = Arguments.createMap();
+                writableMap.putDouble("percent",percent);
+                writableMap.putInt("offset",offset);
+                writableMap.putInt("headerHeight",headerHeight);
+                mEventEmitter.receiveEvent(getTargetId(),Events.HEADER_PULLING.toString(),writableMap);
+            }
+
+            @Override
+            public void onHeaderReleased(RefreshHeader header, int headerHeight, int extendHeight) {
+
+            }
+
+            @Override
+            public void onHeaderReleasing(RefreshHeader header, float percent, int offset, int headerHeight, int extendHeight) {
+
+            }
+
+            @Override
+            public void onHeaderStartAnimator(RefreshHeader header, int headerHeight, int extendHeight) {
+
+            }
+
+            @Override
+            public void onHeaderFinish(RefreshHeader header, boolean success) {
+
+            }
+
+            @Override
+            public void onFooterPulling(RefreshFooter footer, float percent, int offset, int footerHeight, int extendHeight) {
+
+            }
+
+            @Override
+            public void onFooterReleased(RefreshFooter footer, int footerHeight, int extendHeight) {
+
+            }
+
+            @Override
+            public void onFooterReleasing(RefreshFooter footer, float percent, int offset, int footerHeight, int extendHeight) {
+
+            }
+
+            @Override
+            public void onFooterStartAnimator(RefreshFooter footer, int footerHeight, int extendHeight) {
+
+            }
+
+            @Override
+            public void onFooterFinish(RefreshFooter footer, boolean success) {
+
+            }
+
+            @Override
+            public void onLoadMore(RefreshLayout refreshLayout) {
+                mEventEmitter.receiveEvent(getTargetId(),Events.LOADMORE.toString(),null);
+            }
+
+            @Override
+            public void onRefresh(RefreshLayout refreshLayout) {
                 mEventEmitter.receiveEvent(getTargetId(),Events.REFRESH.toString(),null);
             }
-        });
-        view.setOnLoadMoreListener(new OnLoadMoreListener() {
+
             @Override
-            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-                //加载更多触发
-                mEventEmitter.receiveEvent(getTargetId(),Events.LOADMORE.toString(),null);
+            public void onStateChanged(RefreshLayout refreshLayout, RefreshState oldState, RefreshState newState) {
 
             }
         });
