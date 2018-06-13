@@ -17,7 +17,6 @@ class AnyHeader extends Component {
     render() {
         return (
             <RCTAnyHeader
-                ref="refreshLayout"
                 {...this.props}
             />
 
@@ -26,6 +25,7 @@ class AnyHeader extends Component {
 }
 
 AnyHeader.propTypes = {
+    primaryColor:PropTypes.func,
     ...ViewPropTypes,
 }
 export default AnyHeader;
