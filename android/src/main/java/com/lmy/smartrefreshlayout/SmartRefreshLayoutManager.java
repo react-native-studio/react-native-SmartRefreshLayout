@@ -24,6 +24,7 @@ import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.scwang.smartrefresh.layout.util.DensityUtil;
 
 import java.util.List;
@@ -172,7 +173,7 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
 
     @Override
     protected void addEventEmitters(ThemedReactContext reactContext, ReactSmartRefreshLayout view) {
-        view.setOnMultiPurposeListener(new OnMultiPurposeListener() {
+        view.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
             @Override
             public void onHeaderPulling(RefreshHeader header, float percent, int offset, int headerHeight, int extendHeight) {
                 WritableMap writableMap = Arguments.createMap();
