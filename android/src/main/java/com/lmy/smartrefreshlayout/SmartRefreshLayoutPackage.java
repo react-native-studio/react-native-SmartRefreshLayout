@@ -22,7 +22,9 @@ import java.util.List;
 public class SmartRefreshLayoutPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Collections.emptyList();
+        return Arrays.<NativeModule>asList(
+                new RCTSpinnerStyleModule(reactContext)
+        );
     }
     //@Override >=0.47已经过期
     public List<Class<? extends JavaScriptModule>> createJSModules() {
