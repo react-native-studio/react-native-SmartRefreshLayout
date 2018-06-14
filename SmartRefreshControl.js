@@ -6,14 +6,24 @@ import {
     requireNativeComponent,
     findNodeHandle,
     UIManager,
+    NativeModules
 } from 'react-native';
 import ClassicsHeader from "./ClassicsHeader";
 import {ViewPropTypes,PropTypes} from './Util'
 import DefaultHeader from "./DefaultHeader";
 
+const SPModule = NativeModules.SpinnerStyleModule;
+
 const SmartRefreshLayout = requireNativeComponent('SmartRefreshLayout', SmartRefreshControl);
 
 class SmartRefreshControl extends Component {
+    static constants = {
+        "TRANSLATE":SPModule.translate,
+        "SCALE":SPModule.scale,
+        "FIX_BEHIND":SPModule.fixBehind,
+        "FIX_FRONT":SPModule.fixFront,
+        "MATCH_LAYOUT":SPModule.matchLayout,
+    }
 
 
     /**
@@ -78,6 +88,7 @@ SmartRefreshControl.propTypes = {
     enableRefresh: PropTypes.bool,//是否启用下拉刷新功能
     HeaderComponent:PropTypes.object,
     headerHeight:PropTypes.number,
+    primaryColor:PropTypes.string,
     autoRefresh:PropTypes.shape({
         refresh:PropTypes.bool,
         time:PropTypes.number,
