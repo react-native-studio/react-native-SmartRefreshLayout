@@ -1,6 +1,7 @@
 package com.lmy.header;
 
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -20,6 +21,7 @@ import com.scwang.smartrefresh.layout.util.DensityUtil;
 public class AnyHeader extends ReactViewGroup implements RefreshHeader {
     private RefreshKernel mRefreshKernel;
     private int mBackgroundColor;
+    private Integer mPrimaryColor;
     private SpinnerStyle mSpinnerStyle = SpinnerStyle.Translate;
 
     public AnyHeader(Context context) {
@@ -47,15 +49,24 @@ public class AnyHeader extends ReactViewGroup implements RefreshHeader {
         return this.mSpinnerStyle;//指定为平移，不能null
     }
 
+    /**
+     * 设置主题色
+     * @param colors
+     */
     @Override
     public void setPrimaryColors(int... colors) {
-
+        if(colors.length>0) {
+            if (!(getBackground() instanceof BitmapDrawable) && mPrimaryColor == null) {
+                setPrimaryColor(colors[0]);
+                mPrimaryColor = null;
+            }
+        }
     }
 
     public AnyHeader setPrimaryColor(@ColorInt int primaryColor) {
-        mBackgroundColor = primaryColor;
+        mBackgroundColor = mPrimaryColor =primaryColor;
         if (mRefreshKernel != null) {
-            mRefreshKernel.requestDrawBackgroundForHeader(primaryColor);
+            mRefreshKernel.requestDrawBackgroundForHeader(mPrimaryColor);
         }
         return this;
     }
