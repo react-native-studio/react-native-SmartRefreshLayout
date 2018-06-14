@@ -19,6 +19,7 @@ import com.lmy.header.AnyHeader;
 import com.scwang.smartrefresh.header.waveswipe.DisplayUtil;
 import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
+import com.scwang.smartrefresh.layout.api.RefreshInternal;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -80,6 +81,15 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
         );
     }
 
+    /**
+     * 设置为纯滚动
+     * @param view
+     * @param pureScroll
+     */
+    @ReactProp(name = "pureScroll",defaultBoolean = false)
+    public void setPureScroll(ReactSmartRefreshLayout view,boolean pureScroll){
+        view.setEnablePureScrollMode(pureScroll);
+    }
     /**
      * 通过RefreshLayout设置主题色
      * @param view
@@ -182,6 +192,19 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
 
     @Override
     protected void addEventEmitters(ThemedReactContext reactContext, ReactSmartRefreshLayout view) {
+        /**
+         * 必须设置OnRefreshListener，如果没有设置，
+         * 则会自动触发finishRefresh
+         *
+         * OnRefreshListener和OnSimpleMultiPurposeListener
+         * 中的onRefresh都会触发刷新，只需写一个即可
+         */
+        view.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshLayout) {
+
+            }
+        });
         view.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
             @Override
             public void onHeaderPulling(RefreshHeader header, float percent, int offset, int headerHeight, int extendHeight) {
