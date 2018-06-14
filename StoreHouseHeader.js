@@ -16,7 +16,6 @@ class StoreHouseHeader extends Component {
     render() {
         return (
             <RCTStoreHouseHeader
-                ref="refreshLayout"
                 {...this.props}
             />
 

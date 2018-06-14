@@ -17,7 +17,6 @@ class MaterialHeader extends Component {
     render() {
         return (
             <RCTMaterialHeader
-                ref="refreshLayout"
                 {...this.props}
             />
 
