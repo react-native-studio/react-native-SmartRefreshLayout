@@ -81,6 +81,15 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
     }
 
     /**
+     * 通过RefreshLayout设置主题色
+     * @param view
+     * @param primaryColor
+     */
+    @ReactProp(name = "primaryColor")
+    public void setPrimaryColor(ReactSmartRefreshLayout view,String primaryColor){
+        view.setPrimaryColors(Color.parseColor(primaryColor));
+    }
+    /**
      * 设置headerHeight
      * @param view
      * @param headerHeight
