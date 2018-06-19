@@ -5,10 +5,13 @@ package com.lmy.smartrefreshlayout;
  */
 
 public enum Events {
-    REFRESH("onSmartRefresh"),
-    LOADMORE("onLoadMore"),
-    HEADER_PULLING("onHeaderPulling"),
-    HEADER_RELEASING("onHeaderReleasing");
+    REFRESH("onSmartRefresh"),//刷新触发
+    LOAD_MORE("onLoadMore"),//加载更多触发
+    HEADER_PULLING("onHeaderPulling"),//header下拉触发
+    HEADER_RELEASING("onHeaderReleasing"),//header刷新完成后触发
+    PULL_DOWN_TO_REFRESH("onPullDownToRefresh"),//下拉开始刷新
+    RELEASE_TO_REFRESH("onReleaseToRefresh");//释放刷新
+
 
     private final String mName;
 
