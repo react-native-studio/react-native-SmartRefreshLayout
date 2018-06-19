@@ -23,7 +23,22 @@ const instructions = Platform.select({
     android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
-
+Date.prototype.Format = function (fmt) { // author: meizz
+    var o = {
+        "M+": this.getMonth() + 1, // 月份
+        "d+": this.getDate(), // 日
+        "h+": this.getHours(), // 小时
+        "m+": this.getMinutes(), // 分
+        "s+": this.getSeconds(), // 秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), // 季度
+        "S": this.getMilliseconds() // 毫秒
+    };
+    if (/(y+)/.test(fmt))
+        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
 type Props = {};
 export default class App extends Component<Props> {
     state = {
@@ -39,6 +54,8 @@ export default class App extends Component<Props> {
                     <SmartRefreshControl
                         ref={ref=>this._refreshc = ref}
                         onRefresh={()=>{
+                            console.log('onRefresh'+((new Date()).Format("yyyy-MM-dd hh:mm:ss.S")))
+
                             setTimeout(()=>{
                                 this._refreshc && this._refreshc.finishRefresh();
                             },1000)
@@ -55,11 +72,12 @@ export default class App extends Component<Props> {
                             }).start()
                             }
                         }
-                        onHeaderReleased={()=>{
+                        onHeaderReleased={(e)=>{
+                            console.log('onHeaderReleased'+((new Date()).Format("yyyy-MM-dd hh:mm:ss.S")))
                             this.setState({
                                 refreshing:true,
                                 text:'正在刷新'
-                            })
+                            });
                         }}
                         onReleaseToRefresh={()=>{
                             this.setState({
@@ -83,7 +101,7 @@ export default class App extends Component<Props> {
                                     transform:[{
                                         rotate:this.state.rotate.interpolate({
                                             inputRange:[0,1],
-                                            outputRange:['0deg','180deg']
+                                            outputRange:['180deg','0deg']
                                         })
                                     }]
                                 }} name="md-arrow-up" color="#2783cf" size={24}/>}
