@@ -12,6 +12,7 @@ import {
     View,
     ScrollView,
     Animated,
+    Easing
 } from 'react-native';
 import {SmartRefreshControl, AnyHeader} from 'react-native-smartrefreshlayout';
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -69,6 +70,7 @@ export default class App extends Component<Props> {
                                 toValue:0,
                                 duration:197,
                                 useNativeDriver:true,
+                                easing:Easing.linear()
                             }).start()
                             }
                         }
@@ -87,6 +89,7 @@ export default class App extends Component<Props> {
                                 toValue:1,
                                 duration:197,
                                 useNativeDriver:true,
+                                easing:Easing.linear()
                             }).start()
                         }}
                         headerHeight={100}
