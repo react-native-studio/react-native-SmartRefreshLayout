@@ -1,7 +1,6 @@
 rootProject.name = 'Example'
+include ':react-native-smartrefreshlayout'
+project(':react-native-smartrefreshlayout').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-smartrefreshlayout/android')
 include ':react-native-vector-icons'
 project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
-include ':react-native-smartrefreshlayout-next'
-project(':react-native-smartrefreshlayout-next').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-smartrefreshlayout-next/android')
-
 include ':app'

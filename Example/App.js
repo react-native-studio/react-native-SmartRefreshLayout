@@ -13,7 +13,7 @@ import {
     ScrollView,
     Animated,
 } from 'react-native';
-import {SmartRefreshControl, AnyHeader} from 'react-native-smartrefreshlayout-next';
+import {SmartRefreshControl, AnyHeader} from 'react-native-smartrefreshlayout';
 import Icon from 'react-native-vector-icons/Ionicons'
 import {DotIndicator,SkypeIndicator} from 'react-native-indicators';
 const AnimatedIcon = Animated.createAnimatedComponent(Icon)
@@ -38,6 +38,11 @@ export default class App extends Component<Props> {
                 refreshControl={
                     <SmartRefreshControl
                         ref={ref=>this._refreshc = ref}
+                        onRefresh={()=>{
+                            setTimeout(()=>{
+                                this._refreshc && this._refreshc.finishRefresh();
+                            },1000)
+                        }}
                         onPullDownToRefresh={()=>{
                             this.setState({
                                 text:'下拉刷新',
@@ -50,14 +55,11 @@ export default class App extends Component<Props> {
                             }).start()
                             }
                         }
-                        onRefresh={()=>{
+                        onHeaderReleased={()=>{
                             this.setState({
                                 refreshing:true,
                                 text:'正在刷新'
                             })
-                            setTimeout(()=>{
-                                this._refreshc && this._refreshc.finishRefresh();
-                            },1000)
                         }}
                         onReleaseToRefresh={()=>{
                             this.setState({
