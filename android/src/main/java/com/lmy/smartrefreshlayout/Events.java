@@ -10,8 +10,8 @@ public enum Events {
     HEADER_PULLING("onHeaderPulling"),//header下拉触发
     HEADER_RELEASING("onHeaderReleasing"),//header刷新完成后触发
     PULL_DOWN_TO_REFRESH("onPullDownToRefresh"),//下拉开始刷新
-    RELEASE_TO_REFRESH("onReleaseToRefresh");//释放刷新
-
+    RELEASE_TO_REFRESH("onReleaseToRefresh"),//释放刷新
+    HEADER_RELEASED("onHeaderReleased");//释放时进行刷新
 
     private final String mName;
 
