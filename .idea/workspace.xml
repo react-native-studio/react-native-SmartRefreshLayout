@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5f66252-ad81-4603-82e1-4febf926e834" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/AnyHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/AnyHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/DefaultHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/header/DefaultHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/Events.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/Events.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/SmartRefreshLayoutManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout/SmartRefreshLayoutManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
@@ -28,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnyHeader.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AnyHeader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/main/java/com/lmy/header/AnyHeader.java">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -135,9 +132,9 @@
         <option value="$PROJECT_DIR$/Example/node_modules/react-native-smartrefreshlayout-next/android/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Example/App.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -165,7 +162,7 @@
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="716" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -186,57 +183,6 @@
               <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
               <item name="android" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lmy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-native-SmartRefreshLayout" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-native-SmartRefreshLayout" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lmy" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -256,9 +202,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/android/src/main" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/android/src/main/java/com/lmy/smartrefreshlayout" />
-      <recent name="$PROJECT_DIR$/android/src/main" />
       <recent name="$PROJECT_DIR$/android/src" />
       <recent name="$PROJECT_DIR$/images" />
     </key>
@@ -292,15 +238,16 @@
       <workItem from="1528941693278" duration="1665000" />
       <workItem from="1529371633319" duration="211000" />
       <workItem from="1529375090499" duration="1015000" />
-      <workItem from="1529376934982" duration="3518000" />
+      <workItem from="1529376934982" duration="3681000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13297000" />
+    <option name="totallyTimeSpent" value="13460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25019857" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -617,15 +564,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/lmy/header/AnyHeader.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/lmy/header/AnyHeader.java">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
