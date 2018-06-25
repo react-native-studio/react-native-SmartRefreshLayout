@@ -191,7 +191,9 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
     }
 
     @Override
-    protected void addEventEmitters(ThemedReactContext reactContext, ReactSmartRefreshLayout view) {
+    protected void addEventEmitters(ThemedReactContext reactContext,final ReactSmartRefreshLayout view) {
+
+
         /**
          * 必须设置OnRefreshListener，如果没有设置，
          * 则会自动触发finishRefresh
@@ -206,6 +208,10 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
             }
         });
         view.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
+            private int getTargetId(){
+                return view.getId();
+            }
+
             @Override
             public void onHeaderPulling(RefreshHeader header, float percent, int offset, int headerHeight, int extendHeight) {
                 WritableMap writableMap = Arguments.createMap();
