@@ -25,7 +25,7 @@ class AnyHeader extends Component {
 }
 
 AnyHeader.propTypes = {
-    primaryColor:PropTypes.func,
+    primaryColor:PropTypes.string,
     ...ViewPropTypes,
 }
 export default AnyHeader;
