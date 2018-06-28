@@ -149,7 +149,7 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
             case COMMAND_FINISH_REFRESH_ID:
                 int delayed=args.getInt(0);
                 boolean success=args.getBoolean(1);
-                if(delayed>0){
+                if(delayed>=0){
                     root.finishRefresh(delayed,success);
                 }else{
                     root.finishRefresh(success);
