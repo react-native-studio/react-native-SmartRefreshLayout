@@ -6,13 +6,14 @@ import {
     requireNativeComponent,
     findNodeHandle,
     UIManager,
-    NativeModules
+    NativeModules,
+    Platform,
 } from 'react-native';
 import ClassicsHeader from "./ClassicsHeader";
 import {ViewPropTypes,PropTypes} from './Util'
 import DefaultHeader from "./DefaultHeader";
 
-const SPModule = NativeModules.SpinnerStyleModule;
+const SPModule =Platform.OS === 'android' ? NativeModules.SpinnerStyleModule : {};
 
 const SmartRefreshLayout = requireNativeComponent('SmartRefreshLayout', SmartRefreshControl);
 
