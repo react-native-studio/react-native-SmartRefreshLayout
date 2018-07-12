@@ -23,6 +23,6 @@ android {
 
 dependencies {
     compile "com.facebook.react:react-native:+"
-    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5'
-    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5'//没有使用特殊Header，可以不加这行
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    compile 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'//没有使用特殊Header，可以不加这行
 }
