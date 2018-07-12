@@ -1,6 +1,6 @@
 {
   "name": "react-native-smartrefreshlayout",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "基于android SmartRefreshLayout的封装",
   "main": "index.js",
   "scripts": {
