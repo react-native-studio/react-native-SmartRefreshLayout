@@ -80,7 +80,15 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
                 COMMAND_FINISH_REFRESH_NAME,COMMAND_FINISH_REFRESH_ID
         );
     }
-
+    /**
+     * 是否启用越界回弹
+     * @param view
+     * @param overScrollBounce
+     */
+    @ReactProp(name = "overScrollBounce",defaultBoolean = true)
+    public void setOverScrollBounce(ReactSmartRefreshLayout view,boolean overScrollBounce){
+        view.setEnableOverScrollBounce(overScrollBounce);
+    }
     /**
      * 设置为纯滚动
      * @param view
