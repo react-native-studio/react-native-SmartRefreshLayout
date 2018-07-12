@@ -7,10 +7,14 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.facebook.drawee.components.DeferredReleaser;
+import com.lmy.smartrefreshlayout.R;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshKernel;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -24,7 +28,7 @@ import com.scwang.smartrefresh.layout.util.DensityUtil;
  * Created by painter.g on 2018/3/12.
  */
 
-public class DefaultHeader extends LinearLayout implements RefreshHeader {
+public class DefaultHeader extends RelativeLayout implements RefreshHeader {
     private TextView mHeaderText;//标题文本
     private PathsView mArrowView;//下拉箭头
     private ImageView mProgressView;//刷新动画视图
@@ -50,19 +54,39 @@ public class DefaultHeader extends LinearLayout implements RefreshHeader {
 
 
     private void initView(Context context) {
-        setGravity(Gravity.CENTER);
-        mHeaderText = new TextView(context);
-        mHeaderText.setText("下拉开始刷新");
-        mProgressDrawable = new ProgressDrawable();
+        RelativeLayout parent = new RelativeLayout(context);
+        RelativeLayout.LayoutParams rlParent = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        rlParent.addRule(RelativeLayout.CENTER_IN_PARENT,RelativeLayout.TRUE);
+
+
+        RelativeLayout.LayoutParams rlArrowView = new RelativeLayout.LayoutParams(DensityUtil.dp2px(20),DensityUtil.dp2px(20));
         mArrowView = new PathsView(context);
-        mProgressView = new ImageView(context);
-        mProgressView.setImageDrawable(mProgressDrawable);
+        mArrowView.setId(R.id.arrow_view);
         mArrowView.parserColors(0xff666666);
         mArrowView.parserPaths("M20,12l-1.41,-1.41L13,16.17V4h-2v12.17l-5.58,-5.59L4,12l8,8 8,-8z");
-        addView(mProgressView, DensityUtil.dp2px(20), DensityUtil.dp2px(20));
-        addView(mArrowView, DensityUtil.dp2px(20), DensityUtil.dp2px(20));
-        addView(new View(context), DensityUtil.dp2px(20), DensityUtil.dp2px(20));
-        addView(mHeaderText, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        parent.addView(mArrowView,rlArrowView);
+
+
+        RelativeLayout.LayoutParams rlHeaderText= new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        rlHeaderText.addRule(RelativeLayout.RIGHT_OF,mArrowView.getId());
+        rlHeaderText.leftMargin = DensityUtil.dp2px(20);
+        mHeaderText = new TextView(context);
+        mHeaderText.setText("下拉开始刷新");
+        parent.addView(mHeaderText,rlHeaderText);
+
+        RelativeLayout.LayoutParams rlProgressView = new RelativeLayout.LayoutParams(DensityUtil.dp2px(20),DensityUtil.dp2px(20));
+        rlProgressView.addRule(RelativeLayout.ALIGN_RIGHT,mArrowView.getId());
+        mProgressDrawable = new ProgressDrawable();
+        mProgressView = new ImageView(context);
+        mProgressView.setImageDrawable(mProgressDrawable);
+        parent.addView(mProgressView,rlProgressView);
+
+
+        addView(parent,rlParent);
+        //addView(mProgressView, DensityUtil.dp2px(20), DensityUtil.dp2px(20));
+        //addView(mArrowView, DensityUtil.dp2px(20), DensityUtil.dp2px(20));
+        //addView(new View(context), DensityUtil.dp2px(20), DensityUtil.dp2px(20));
+        //addView(mHeaderText, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         setMinimumHeight(DensityUtil.dp2px(60));
     }
 
@@ -91,7 +115,6 @@ public class DefaultHeader extends LinearLayout implements RefreshHeader {
         }
         return 500;//延迟500毫秒之后再弹回
     }
-
     @Override
     public void onStateChanged(RefreshLayout refreshLayout, RefreshState oldState, RefreshState newState) {
         switch (newState) {
