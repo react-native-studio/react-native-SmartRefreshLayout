@@ -43,6 +43,9 @@ import {SmartRefreshControl,ClassicsHeader,StoreHouseHeader,DefaultHeader} from 
 |HeaderComponent|Component|refreshcontrol的header|
 |pureScroll|bool|是否纯滚动|
 |overScrollBounce|bool|是否越界回弹|
+|overScrollDrag|bool|是否使用越界拖动，类似IOS样式|
+|dragRate|number|为(显示下拉高度/手指真实下拉高度=阻尼效果)|
+|maxDragRate|number|最大显示下拉高度/Header标准高度|
 
 注意：HeaderComponet现在支持任意的RN组件，但是需要放在AnyHeader的组件中，其中onHeaderPulling和onHeaderReleasing的参数为{nativeEvent:{percent,offset,headerHeight}},可用来控制下拉和释放过程中更为精细的动画
 如果下拉和释放过程不需要过程动画，则使用onPullDownToRefresh和onReleaseToRefresh即可实现，请看示例：Example [HuaweiRefreshControl](https://github.com/react-native-studio/react-native-SmartRefreshLayout/blob/master/Example/HuaWeiRefreshControl.js)
