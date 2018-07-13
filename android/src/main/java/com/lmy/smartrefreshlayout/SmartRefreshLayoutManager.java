@@ -81,6 +81,15 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
         );
     }
     /**
+     * 是否使用越界拖动
+     * @param view
+     * @param overScrollDrag
+     */
+    @ReactProp(name="overScrollDrag",defaultBoolean = true)
+    public void setOverScrollDrag(ReactSmartRefreshLayout view,boolean overScrollDrag){
+        view.setEnableOverScrollDrag(overScrollDrag);
+    }
+    /**
      * 是否启用越界回弹
      * @param view
      * @param overScrollBounce

@@ -93,6 +93,7 @@ SmartRefreshControl.propTypes = {
     HeaderComponent:PropTypes.object,
     headerHeight:PropTypes.number,
     overScrollBounce:PropTypes.bool,//是否使用越界回弹
+    overScrollDrag:PropTypes.bool,//是否使用越界拖动，类似IOS样式
     pureScroll:PropTypes.bool,//是否使用纯滚动模式
     primaryColor:PropTypes.string,
     autoRefresh:PropTypes.shape({
