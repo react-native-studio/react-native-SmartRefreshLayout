@@ -81,6 +81,24 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
         );
     }
     /**
+     * 最大显示下拉高度/Header标准高度
+     * @param view
+     * @param maxDragRate
+     */
+    @ReactProp(name="maxDragRate",defaultFloat = 2.0f)
+    public void setMaxDragRate(ReactSmartRefreshLayout view,float maxDragRate){
+        view.setHeaderMaxDragRate(maxDragRate);
+    }
+    /**
+     * 显示下拉高度/手指真实下拉高度=阻尼效果
+     * @param view
+     * @param dragRate
+     */
+    @ReactProp(name = "dragRate",defaultFloat = 0.5f)
+    public void setDragRate(ReactSmartRefreshLayout view,float dragRate){
+        view.setDragRate(dragRate);
+    }
+    /**
      * 是否使用越界拖动
      * @param view
      * @param overScrollDrag

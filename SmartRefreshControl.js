@@ -95,6 +95,8 @@ SmartRefreshControl.propTypes = {
     overScrollBounce:PropTypes.bool,//是否使用越界回弹
     overScrollDrag:PropTypes.bool,//是否使用越界拖动，类似IOS样式
     pureScroll:PropTypes.bool,//是否使用纯滚动模式
+    dragRate:PropTypes.number,// 显示下拉高度/手指真实下拉高度=阻尼效果
+    maxDragRate:PropTypes.number,//最大显示下拉高度/Header标准高度
     primaryColor:PropTypes.string,
     autoRefresh:PropTypes.shape({
         refresh:PropTypes.bool,
