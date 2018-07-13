@@ -101,4 +101,8 @@ SmartRefreshControl.propTypes = {
     }),//是否启动自动刷新
     ...ViewPropTypes,
 }
+
+SmartRefreshControl.defaultProps={
+    overScrollBounce:false
+}
 export default SmartRefreshControl;
