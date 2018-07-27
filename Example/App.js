@@ -15,6 +15,7 @@ import {
     Easing
 } from 'react-native';
 import HuaWeiRefreshControl from './HuaWeiRefreshControl'
+import ListViewExample from './ListViewExample'
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -39,31 +40,9 @@ Date.prototype.Format = function (fmt) { // author: meizz
 }
 type Props = {};
 export default class App extends Component<Props> {
-    _onRefresh=()=>{
-        setTimeout(()=>{
-            this._hw && this._hw.finishRefresh()
-        },1000)
-    }
     render() {
         return (
-            <ScrollView
-                style={{flex:1}}
-                refreshControl={
-                    <HuaWeiRefreshControl
-                        ref={ref=>this._hw = ref}
-                        onRefresh={this._onRefresh}
-                    />
-                }
-            >
-                <View style={styles.container}>
-                    <Text style={styles.instructions}>
-                        To get started, edit App.js
-                    </Text>
-                    <Text style={styles.instructions}>
-                        {instructions}
-                    </Text>
-                </View>
-            </ScrollView>
+            <ListViewExample/>
         );
     }
 }
