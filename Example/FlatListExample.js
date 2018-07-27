@@ -19,6 +19,7 @@ export default class FlatListExample extends Component {
         return (
             <View style={{flex: 1}}>
                 <FlatList
+                    keyExtractor={(item)=>item}
                     data={this.state.data}
                     renderItem={({item,index}) => <Text key={index} onPress={()=>alert(111)} style={{height:100}}>{item}</Text>}
                     renderScrollComponent={props=><ScrollView
