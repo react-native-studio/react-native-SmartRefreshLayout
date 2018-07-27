@@ -1,30 +1,17 @@
 import React, {Component} from 'react';
-import {
-    StyleSheet,
-    View,
-    Text,
-    requireNativeComponent,
-    findNodeHandle,
-    UIManager,
-} from 'react-native';
-import {ViewPropTypes,PropTypes} from './Util'
+import {requireNativeComponent} from 'react-native';
+import {ViewPropTypes, PropTypes} from './Util'
+
 const RCTClassicsHeader = requireNativeComponent('RCTClassicsHeader', RCTClassicsHeader);
 
-class ClassicsHeader extends Component {
+export default class ClassicsHeader extends Component {
+    static propTypes = {
+        primaryColor: PropTypes.string,
+        accentColor: PropTypes.string,
+        ...ViewPropTypes,
+    }
 
     render() {
-        return (
-            <RCTClassicsHeader
-                {...this.props}
-            />
-
-        )
+        return (<RCTClassicsHeader {...this.props}/>)
     }
 }
-
-ClassicsHeader.propTypes = {
-    primaryColor:PropTypes.string,
-    accentColor:PropTypes.string,
-    ...ViewPropTypes,
-}
-export default ClassicsHeader;
