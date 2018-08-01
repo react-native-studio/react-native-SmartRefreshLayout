@@ -25,7 +25,7 @@ export default class ListViewExample1 extends Component {
                         onRefresh={this._onRefresh}
                     />}
                     dataSource={this.state.dataSource}
-                    renderRow={(rowData) => <Text onPress={()=>alert(111)} style={{height:100}}>{rowData}</Text>}
+                    renderRow={(rowData) => <Text onPress={()=>alert(111)} style={{height:100,borderColor:'black',borderWidth:1}}>{rowData}</Text>}
                 />
             </View>
         )
