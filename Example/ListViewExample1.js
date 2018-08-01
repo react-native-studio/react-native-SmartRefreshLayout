@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Text,ListView,ScrollView} from 'react-native';
+import {StyleSheet, View, Text,ListView,ScrollView,ViewPagerAndroid} from 'react-native';
 import PropTypes from 'prop-types';
 import HuaWeiRefreshControl from './HuaWeiRefreshControl';
 
@@ -20,6 +20,16 @@ export default class ListViewExample1 extends Component {
         return (
             <View style={{flex: 1}}>
                 <ListView
+                    renderHeader={()=><ViewPagerAndroid
+                        style={styles.viewPager}
+                        initialPage={0}>
+                        <View style={styles.pageStyle} key="1">
+                            <Text>First page</Text>
+                        </View>
+                        <View style={styles.pageStyle} key="2">
+                            <Text>Second page</Text>
+                        </View>
+                    </ViewPagerAndroid>}
                     refreshControl={<HuaWeiRefreshControl
                         ref={ref=>this._hw = ref}
                         onRefresh={this._onRefresh}
@@ -31,3 +41,13 @@ export default class ListViewExample1 extends Component {
         )
     }
 }
+const styles = StyleSheet.create({
+    viewPager: {
+        flex: 1,
+        height:300
+    },
+    pageStyle: {
+        alignItems: 'center',
+        padding: 20,
+    }
+})
