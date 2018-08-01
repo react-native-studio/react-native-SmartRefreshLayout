@@ -67,6 +67,7 @@ class SmartRefreshControl extends Component {
             <SmartRefreshLayout
                 ref="refreshLayout"
                 {...nativeProps}
+                onMoveShouldSetResponderCapture={()=>true}//拦截子组件的触摸移动事件
             >
                 {this.renderHeader()}
                 {React.cloneElement(
