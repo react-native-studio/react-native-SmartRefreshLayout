@@ -8,6 +8,7 @@ import {
     UIManager,
     NativeModules,
     Platform,
+    PanResponder,
 } from 'react-native';
 import ClassicsHeader from "./ClassicsHeader";
 import {ViewPropTypes,PropTypes} from './Util'
@@ -43,6 +44,16 @@ class SmartRefreshControl extends Component {
 
         return findNodeHandle(this.refs.refreshLayout);
     }
+    componentWillMount() {
+        this._panResponder = PanResponder.create({
+            onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
+                if(Math.abs(gestureState.dx)>1 || Math.abs(gestureState.dy) >1){
+                    return true
+                }
+                return false;
+            }
+        });
+    }
     renderHeader=()=>{
         const {HeaderComponent}=this.props;
         if(HeaderComponent){
@@ -61,13 +72,14 @@ class SmartRefreshControl extends Component {
     }
     render() {
         const nativeProps ={...this.props,...{
-            onSmartRefresh:this._onSmartRefresh,
-        }}
+                onSmartRefresh:this._onSmartRefresh,
+            }}
         return (
             <SmartRefreshLayout
                 ref="refreshLayout"
                 {...nativeProps}
-                onMoveShouldSetResponderCapture={()=>true}//拦截子组件的触摸移动事件
+                {...this._panResponder.panHandlers}
+                //onMoveShouldSetResponderCapture={()=>true}//拦截子组件的触摸移动事件
             >
                 {this.renderHeader()}
                 {React.cloneElement(
