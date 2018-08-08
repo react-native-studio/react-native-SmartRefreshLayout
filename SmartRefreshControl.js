@@ -47,13 +47,21 @@ class SmartRefreshControl extends Component {
     componentWillMount() {
         this._panResponder = PanResponder.create({
             onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
-                if(Math.abs(gestureState.dx)>1 || Math.abs(gestureState.dy) >1){
+                if(this.shiftPercent >= 0.039 || this.footerShiftPercent >= 0.068){//满足条件捕获事件
                     return true
                 }
                 return false;
             }
         });
     }
+
+    shiftPercent = 0;//header位移百分比，默认为0
+
+    footerShiftPercent = 0; // footer位移百分比
+    /**
+     * 渲染Header
+     * @return {*}
+     */
     renderHeader=()=>{
         const {HeaderComponent}=this.props;
         if(HeaderComponent){
@@ -63,16 +71,51 @@ class SmartRefreshControl extends Component {
         }
         return <DefaultHeader/>
     }
+    /**
+     * 刷新时触发
+     * @private
+     */
     _onSmartRefresh=()=>{
-        this.props.onRefresh && this.props.onRefresh();
+        let {onRefresh} = this.props;
+        onRefresh && onRefresh();
     }
-    //TODO://还未实现
-    renderFooter=()=>{
-        return null;
+    /**
+     * 下拉过程
+     * @param event
+     * @private
+     */
+    _onHeaderPulling=(event)=>{
+        this.shiftPercent = event.nativeEvent.percent;
+        let {onHeaderPulling,onHeaderMoving} = this.props;
+        onHeaderMoving && onHeaderMoving(event);
+        onHeaderPulling && onHeaderPulling(event);
     }
+    /**
+     * 释放过程
+     * @param event
+     * @private
+     */
+    _onHeaderReleasing=(event)=>{
+        this.shiftPercent = event.nativeEvent.percent;
+        let {onHeaderReleasing,onHeaderMoving} = this.props;
+        onHeaderMoving && onHeaderMoving(event);
+        onHeaderReleasing && onHeaderReleasing(event);
+    }
+    /**
+     * 底部位移过程
+     * @param event
+     * @private
+     */
+    _onFooterMoving=(event)=>{
+        this.footerShiftPercent = event.nativeEvent.percent;
+    }
+
     render() {
         const nativeProps ={...this.props,...{
                 onSmartRefresh:this._onSmartRefresh,
+                onHeaderPulling:this._onHeaderPulling,
+                onHeaderReleasing:this._onHeaderReleasing,
+                onFooterMoving:this._onFooterMoving
             }}
         return (
             <SmartRefreshLayout
@@ -99,6 +142,7 @@ SmartRefreshControl.propTypes = {
     onLoadMore: PropTypes.func,
     onHeaderPulling:PropTypes.func,
     onHeaderReleasing:PropTypes.func,
+    onHeaderMoving:PropTypes.func,//向外提供的接口
     onPullDownToRefresh:PropTypes.func,
     onReleaseToRefresh:PropTypes.func,
     onHeaderReleased:PropTypes.func,
