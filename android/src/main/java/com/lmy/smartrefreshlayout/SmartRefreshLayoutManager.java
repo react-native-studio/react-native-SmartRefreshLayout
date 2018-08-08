@@ -273,6 +273,24 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
             }
 
             @Override
+            public void onFooterPulling(RefreshFooter footer, float percent, int offset, int footerHeight, int extendHeight) {
+                WritableMap writableMap = Arguments.createMap();
+                writableMap.putDouble("percent",percent);
+                writableMap.putDouble("offset",DensityUtil.px2dp(offset));
+                writableMap.putDouble("footerHeight",DensityUtil.px2dp(footerHeight));
+                mEventEmitter.receiveEvent(getTargetId(),Events.FOOTER_MOVING.toString(),writableMap);
+            }
+
+            @Override
+            public void onFooterReleasing(RefreshFooter footer, float percent, int offset, int footerHeight, int extendHeight) {
+                WritableMap writableMap = Arguments.createMap();
+                writableMap.putDouble("percent",percent);
+                writableMap.putDouble("offset",DensityUtil.px2dp(offset));
+                writableMap.putDouble("footerHeight",DensityUtil.px2dp(footerHeight));
+                mEventEmitter.receiveEvent(getTargetId(),Events.FOOTER_MOVING.toString(),writableMap);
+            }
+
+            @Override
             public void onHeaderStartAnimator(RefreshHeader header, int headerHeight, int extendHeight) {
 
             }
