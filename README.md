@@ -36,6 +36,7 @@ import {SmartRefreshControl,ClassicsHeader,StoreHouseHeader,DefaultHeader} from 
 |onHeaderPulling|func|header下拉过程触发|
 |onHeaderReleasing|func|header释放过程触发|
 |onHeaderReleased|func|header释放时触发|
+|onHeaderMoving|func|header移动时触发(包括下拉和释放过程)|
 |enableRefresh|bool|是否启用刷新|
 |headerHeight|number|设置Header的高度|
 |primaryColor|string|刷新控件主调色|
