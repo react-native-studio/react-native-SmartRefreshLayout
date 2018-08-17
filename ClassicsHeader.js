@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {requireNativeComponent} from 'react-native';
-import {ViewPropTypes, PropTypes} from './Util'
+import {ViewPropTypes} from './Util';
+import PropTypes from 'prop-types';
 
 const RCTClassicsHeader = requireNativeComponent('RCTClassicsHeader', RCTClassicsHeader);
 

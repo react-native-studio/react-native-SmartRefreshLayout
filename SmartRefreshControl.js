@@ -10,9 +10,9 @@ import {
     Platform,
     PanResponder,
 } from 'react-native';
-import ClassicsHeader from "./ClassicsHeader";
-import {ViewPropTypes,PropTypes} from './Util'
+import {ViewPropTypes} from './Util'
 import DefaultHeader from "./DefaultHeader";
+import PropTypes from 'prop-types'
 
 const SPModule =Platform.OS === 'android' ? NativeModules.SpinnerStyleModule : {};
 
