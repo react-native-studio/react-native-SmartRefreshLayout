@@ -4171,9 +4171,9 @@ react-native-indicators@^0.13.0:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-smartrefreshlayout@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.npmjs.org/react-native-smartrefreshlayout/-/react-native-smartrefreshlayout-0.6.0.tgz#1d12091ec6000cd521de951afeeac5aad38a163d"
+react-native-smartrefreshlayout@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.npmjs.org/react-native-smartrefreshlayout/-/react-native-smartrefreshlayout-0.6.1.tgz#177ba26536d412fd5fa37ac08bb8050b7e0e3c01"
   dependencies:
     prop-types "*"
 
