@@ -4194,9 +4194,9 @@ react-native-safe-module@^1.1.0:
   dependencies:
     dedent "^0.6.0"
 
-react-native-smartrefreshlayout@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.npmjs.org/react-native-smartrefreshlayout/-/react-native-smartrefreshlayout-0.6.1.tgz#177ba26536d412fd5fa37ac08bb8050b7e0e3c01"
+react-native-smartrefreshlayout@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.npmjs.org/react-native-smartrefreshlayout/-/react-native-smartrefreshlayout-0.6.2.tgz#f4c49ddc43efd4bbc56c11eb5e77bb3961b34d91"
   dependencies:
     prop-types "*"
 
