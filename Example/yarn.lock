@@ -3327,9 +3327,9 @@ lottie-ios@^2.5.0:
   version "2.5.0"
   resolved "https://registry.npmjs.org/lottie-ios/-/lottie-ios-2.5.0.tgz#55c808e785d4a6933b0c10b395530b17098b05de"
 
-lottie-react-native@^2.5.6:
-  version "2.5.6"
-  resolved "https://registry.npmjs.org/lottie-react-native/-/lottie-react-native-2.5.6.tgz#c5ad64a880108d50c728505ede10470a109c6e70"
+lottie-react-native@^2.5.8:
+  version "2.5.8"
+  resolved "https://registry.npmjs.org/lottie-react-native/-/lottie-react-native-2.5.8.tgz#8599a077f4071f01d5e5215bcf50a3a8e67e7bc9"
   dependencies:
     invariant "^2.2.2"
     lottie-ios "^2.5.0"

@@ -20,12 +20,18 @@ export default class LottieRefreshControl extends Component {
     _onRefresh = () => {
         let {onRefresh} = this.props;
         onRefresh && onRefresh();
+        this.lottieView.play(this.state.scale.__getValue())
+
     }
     finishRefresh=(params)=>{
-        this._refreshc && this._refreshc.finishRefresh(params)
+        this._refreshc && this._refreshc.finishRefresh(params);
+        this.lottieView.reset();
     }
     _onHeaderMoving=(event)=>{
-        this.state.scale.setValue(event.nativeEvent.percent);
+        let {percent} = event.nativeEvent;
+        if(percent<=1) {
+            this.state.scale.setValue(event.nativeEvent.percent);
+        }
     }
     render() {
         return (
@@ -44,7 +50,7 @@ export default class LottieRefreshControl extends Component {
                             outputRange: [0.1,1,1],
                         })
                         }]}}>
-                        <LottieView style={{width:100,height:100}} hardwareAccelerationAndroid  autoPlay source={require('./loop.json')} speed={1.5} />
+                        <LottieView speed={2} ref={obj =>this.lottieView = obj} style={{width:100,height:100}} hardwareAccelerationAndroid  progress={this.state.scale} source={require('./cycle_animation.json')} />
                         </Animated.View>
                     </AnyHeader>
                 }
