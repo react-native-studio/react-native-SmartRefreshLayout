@@ -2,6 +2,8 @@
 基于android SmartRefreshLayout https://github.com/scwang90/SmartRefreshLayout 开发的插件，可提供类似ios的弹性刷新,如果你喜欢，请不要吝啬你的 :smile: star :smile:
 
 ios自动刷新组件见[react-native-MJRefresh](https://github.com/react-native-studio/react-native-MJRefresh)
+
+
 ## 第一步
 工程目录下运行<br> `npm install --save react-native-smartrefreshlayout`<br> 或者<br> `yarn add react-native-smartrefreshlayout`(已经安装了yarn)
 ## 第二步
@@ -82,7 +84,10 @@ import {SmartRefreshControl,ClassicsHeader,StoreHouseHeader,DefaultHeader} from 
 |lineWidth|number|线宽|
 ## 示例
 <!--![image](https://github.com/2534290808/react-native-android-danmaku/blob/master/images/Screenshot_1513176625.png)-->
-<img src="https://github.com/react-native-studio/react-native-smartrefreshlayout/blob/master/images/lottierefresh.gif" width = "300"  alt="图片名称" align=center />
-<img src="https://github.com/react-native-studio/react-native-smartrefreshlayout/blob/master/images/Screenshot_1520489605.png" width = "300"  alt="图片名称" align=center />
-<img src="https://github.com/react-native-studio/react-native-smartrefreshlayout/blob/master/images/Screenshot_1520489593.png" width = "300"  alt="图片名称" align=center />
+<div align=center>
+<img src="https://github.com/react-native-studio/react-native-smartrefreshlayout/blob/master/images/lottierefresh.gif" width = "280" alt="图片名称" align=center />
+<img src="https://github.com/react-native-studio/react-native-smartrefreshlayout/blob/master/images/Screenshot_1520489605.png" width = "280"  alt="图片名称" align=center />
+<img src="https://github.com/react-native-studio/react-native-smartrefreshlayout/blob/master/images/Screenshot_1520489593.png" width = "280"  alt="图片名称" align=center />
+  </div>
+  
 
