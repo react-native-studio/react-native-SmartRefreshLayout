@@ -1,8 +1,6 @@
 package com.lmy.smartrefreshlayout;
 
 import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.view.Display;
 import android.view.View;
 
 import com.facebook.react.bridge.Arguments;
@@ -13,17 +11,12 @@ import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.facebook.react.uimanager.annotations.ReactPropGroup;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.lmy.header.AnyHeader;
-import com.scwang.smartrefresh.header.waveswipe.DisplayUtil;
 import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
-import com.scwang.smartrefresh.layout.api.RefreshInternal;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import com.scwang.smartrefresh.layout.util.DensityUtil;
@@ -130,9 +123,9 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
      * @param view
      * @param primaryColor
      */
-    @ReactProp(name = "primaryColor")
-    public void setPrimaryColor(ReactSmartRefreshLayout view,String primaryColor){
-        view.setPrimaryColors(Color.parseColor(primaryColor));
+    @ReactProp(name = "primaryColor",defaultInt = Color.TRANSPARENT)
+    public void setPrimaryColor(ReactSmartRefreshLayout view, int primaryColor){
+        view.setPrimaryColors(primaryColor);
     }
     /**
      * 设置headerHeight

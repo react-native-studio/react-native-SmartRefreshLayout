@@ -12,7 +12,8 @@ import {
 } from 'react-native';
 import {ViewPropTypes} from './Util'
 import DefaultHeader from "./DefaultHeader";
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import processColor from 'react-native/Libraries/StyleSheet/processColor';
 
 const SPModule =Platform.OS === 'android' ? NativeModules.SpinnerStyleModule : {};
 
@@ -113,7 +114,8 @@ class SmartRefreshControl extends Component {
                 onSmartRefresh:this._onSmartRefresh,
                 onHeaderPulling:this._onHeaderPulling,
                 onHeaderReleasing:this._onHeaderReleasing,
-                onFooterMoving:this._onFooterMoving
+                onFooterMoving:this._onFooterMoving,
+                primaryColor: processColor(this.props.primaryColor),
             }}
         return (
             <SmartRefreshLayout
