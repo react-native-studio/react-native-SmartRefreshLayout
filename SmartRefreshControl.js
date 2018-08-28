@@ -65,9 +65,7 @@ class SmartRefreshControl extends Component {
     renderHeader=()=>{
         const {HeaderComponent}=this.props;
         if(HeaderComponent){
-            return React.cloneElement(HeaderComponent,{
-                key:'header'
-            });
+            return HeaderComponent;
         }
         return <DefaultHeader/>
     }
@@ -122,15 +120,9 @@ class SmartRefreshControl extends Component {
                 ref="refreshLayout"
                 {...nativeProps}
                 {...this._panResponder.panHandlers}
-                //onMoveShouldSetResponderCapture={()=>true}//拦截子组件的触摸移动事件
             >
                 {this.renderHeader()}
-                {React.cloneElement(
-                    this.props.children,
-                    {
-                        key:'content'
-                    }
-                )}
+                {this.props.children}
             </SmartRefreshLayout>
 
         )
