@@ -59,7 +59,7 @@ export default class HuaWeiRefreshControl extends Component {
     }
     render() {
         return (
-            <SmartRefreshControl
+            <SmartRefreshControl primaryColor='#ffcc03'
                 style={{flex:1}}
                 ref={ref => this._refreshc = ref}
                 children={this.props.children}
