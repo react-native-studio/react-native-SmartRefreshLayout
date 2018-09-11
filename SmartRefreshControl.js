@@ -14,6 +14,7 @@ import {ViewPropTypes} from './Util'
 import DefaultHeader from "./DefaultHeader";
 import PropTypes from 'prop-types';
 import processColor from 'react-native/Libraries/StyleSheet/processColor';
+import deprecatedPropType from 'react-native/Libraries/Utilities/deprecatedPropType'
 
 const SPModule =Platform.OS === 'android' ? NativeModules.SpinnerStyleModule : {};
 
@@ -64,7 +65,10 @@ class SmartRefreshControl extends Component {
      * @return {*}
      */
     renderHeader=()=>{
-        const {HeaderComponent}=this.props;
+        const {HeaderComponent,renderHeader}=this.props;
+        if(renderHeader){
+            return React.isValidElement(renderHeader)?renderHeader:renderHeader();
+        }
         if(HeaderComponent){
             return HeaderComponent;
         }
@@ -141,7 +145,11 @@ SmartRefreshControl.propTypes = {
     onReleaseToRefresh:PropTypes.func,
     onHeaderReleased:PropTypes.func,
     enableRefresh: PropTypes.bool,//是否启用下拉刷新功能
-    HeaderComponent:PropTypes.object,
+    HeaderComponent:deprecatedPropType(PropTypes.object,'Use the `renderHeader` prop instead.'),
+    renderHeader:PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.element,
+    ]),
     headerHeight:PropTypes.number,
     overScrollBounce:PropTypes.bool,//是否使用越界回弹
     overScrollDrag:PropTypes.bool,//是否使用越界拖动，类似IOS样式
