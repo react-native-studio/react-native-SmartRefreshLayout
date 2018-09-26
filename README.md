@@ -1,34 +1,113 @@
-# react-native-SmartRefreshLayout(完全可使用RN自定义的下拉刷新插件)[![npm version](https://badge.fury.io/js/react-native-smartrefreshlayout.svg)](https://badge.fury.io/js/react-native-smartrefreshlayout)
-基于android SmartRefreshLayout https://github.com/scwang90/SmartRefreshLayout 开发的插件，可提供类似ios的弹性刷新,如果你喜欢，请不要吝啬你的 :smile: star :smile:
+# React Native SmartRefreshLayout[![npm version](https://badge.fury.io/js/react-native-smartrefreshlayout.svg)](https://badge.fury.io/js/react-native-smartrefreshlayout)
 
-***IOS*** 自定义下拉刷新组件见[react-native-MJRefresh](https://github.com/react-native-studio/react-native-MJRefresh)
+>React-Native-SmartRefreshLayout是基于[Android SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout) 开发的插件，可提供类似ios的弹性刷新,该插件可完全使用React Native进行自定义
+
+>IOS自定义下拉刷新组件见[React-Native-MJRefresh](https://github.com/react-native-studio/react-native-MJRefresh)
+
+## 安装
+#### 第一步
+工程目录下运行:
+<br>
+```bash
+npm install --save react-native-smartrefreshlayout
+```
+<br>
+or (已经安装了yarn)
+<br>
+
+```bash
+yarn add react-native-smartrefreshlayout
+```
 
 
-## 第一步
-工程目录下运行<br> `npm install --save react-native-smartrefreshlayout`<br> 或者<br> `yarn add react-native-smartrefreshlayout`(已经安装了yarn)
-## 第二步
-运行 `react-native link react-native-smartrefreshlayout`
-## 第三部使用
+#### 第二步
+工程目录下运行:<br>
+```bash
+react-native link react-native-smartrefreshlayout
+```
+
+## 使用
 在工程中导入：
 ```js
-import {SmartRefreshControl,ClassicsHeader,StoreHouseHeader,DefaultHeader} from 'react-native-smartrefreshlayout';
-
+import {SmartRefreshControl,DefaultHeader} from 'react-native-smartrefreshlayout';
 //使用方法和RN官方的RefreshControl类似，
-<ScrollView 
-  refreshControl={<SmartRefreshControl
-     ref={refreshcontrol=>this.refreshControl=refreshcontrol}
-     HeaderComponent={<DefaultHeader/>}
-     onRefresh={()=>{
-       setTimeout(()=>{
-       this.refreshControl && this.refreshControl.finishRefresh();
-       },1000)
-     }}
-  />}
->
-</ScrollView>
+            <ScrollView
+                refreshControl={<SmartRefreshControl
+                    ref={ref => this.rc = ref}
+                    HeaderComponent={<DefaultHeader/>}
+                    onRefresh={() => {
+                        setTimeout(() => {
+                            this.rc && this.rc.finishRefresh();
+                        }, 1000)
+                    }}
+                />}
+            >
+            </ScrollView>
 ```
 ## 组件
 ### SmartRefreshControl
+#### 查看属性
+- [`HeaderComponent`](README.md#headercomponent)
+- [`enableRefresh`](README.md#enablerefresh)
+- [`headerHeight`](README.md#headerHeight)
+- [`primaryColor`](README.md#primarycolor)
+- [`autoRefresh`](README.md#autorefresh)
+- [`pureScroll`](README.md#purescroll)
+- [`overScrollBounce`](README.md#overscrollbounce)
+- [`overScrollDrag`](README.md#overscrolldrag)
+- [`dragRate`](README.md#dragrate)
+- [`maxDragRate`](README.md#maxdragrate)
+- [`onRefresh`](README.md#onrefresh)
+- [`onPullDownToRefresh`](README.md#onpulldowntorefresh)
+- [`onReleaseToRefresh`](README.md#onreleasetorefresh)
+- [`onHeaderPulling`](README.md#onheaderpulling)
+- [`onHeaderReleasing`](README.md#onheaderreleasing)
+- [`onHeaderReleased`](README.md#onheaderreleased)
+- [`onHeaderMoving`](README.md#onheadermoving)
+
+#### 查看方法
+
+- [`finishRefresh`](README.md#finishrefresh)
+
+## 文档
+
+### Props
+
+#### `HeaderComponent`
+
+用于渲染SmartRefreshLayout组件的header,默认为DefaultHeader。
+
+>**NOTE**
+>
+>必须传入插件中给出的Header组件，如AnyHeader,DefaultHeader等
+
+| Type | Required |
+| ---- | -------- |
+| Element | No       |
+
+---
+
+#### `enableRefresh`
+
+是否启用下拉刷新,默认为true
+
+| Type | Required |
+| ---- | -------- |
+| bool | No       |
+
+#### `headerHeight`
+
+设定header的高度
+
+>**NOTE**
+>
+>自定义 header 时应指定headerHeight。
+
+| Type | Required |
+| ---- | -------- |
+| number | No       |
+
+#### 属性
 #### 属性表格
 |属性名|类型|描述|
 |:---:|:---:|:---:|
