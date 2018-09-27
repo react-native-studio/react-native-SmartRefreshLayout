@@ -11,7 +11,7 @@
 ```bash
 npm install --save react-native-smartrefreshlayout
 ```
-<br>
+
 or (已经安装了yarn)
 <br>
 
@@ -46,6 +46,7 @@ import {SmartRefreshControl,DefaultHeader} from 'react-native-smartrefreshlayout
 ```
 ## 组件
 ### SmartRefreshControl
+其他组件查看[AnyHeader](./AnyHeader.md)、[DefaultHeader](./DefaualtHeader.md)、[ClassicsHeader](./DefaultHeader.md)、[StoreHouseHeader](./StoreHouse.md)
 #### 查看属性
 - [`HeaderComponent`](README.md#headercomponent)
 - [`enableRefresh`](README.md#enablerefresh)
@@ -93,7 +94,9 @@ import {SmartRefreshControl,DefaultHeader} from 'react-native-smartrefreshlayout
 
 | Type | Required |
 | ---- | -------- |
-| bool | No       |
+| boolean | No       |
+
+---
 
 #### `headerHeight`
 
@@ -107,27 +110,174 @@ import {SmartRefreshControl,DefaultHeader} from 'react-native-smartrefreshlayout
 | ---- | -------- |
 | number | No       |
 
-#### 属性
-#### 属性表格
-|属性名|类型|描述|
-|:---:|:---:|:---:|
-|onRefresh|func|刷新触发|
-|onPullDownToRefresh|func|可下拉刷新时触发|
-|onReleaseToRefresh|func|可释放刷新时触发|
-|onHeaderPulling|func|header下拉过程触发|
-|onHeaderReleasing|func|header释放过程触发|
-|onHeaderReleased|func|header释放时触发|
-|onHeaderMoving|func|header移动时触发(包括下拉和释放过程)|
-|enableRefresh|bool|是否启用刷新|
-|headerHeight|number|设置Header的高度|
-|primaryColor|string|刷新控件主调色|
-|autoRefresh|{refresh,timeout}|设置自动刷新|
-|HeaderComponent|Component|refreshcontrol的header|
-|pureScroll|bool|是否纯滚动|
-|overScrollBounce|bool|是否越界回弹|
-|overScrollDrag|bool|是否使用越界拖动，类似IOS样式|
-|dragRate|number|为(显示下拉高度/手指真实下拉高度=阻尼效果)|
-|maxDragRate|number|最大显示下拉高度/Header标准高度|
+---
+
+#### `primaryColor`
+
+设置刷新组件的主调色
+
+| Type | Required |
+| ---- | -------- |
+| string | No       |
+
+---
+
+#### `autoRefresh`
+
+是否自动刷新
+
+| Type | Required |
+| ---- | -------- |
+| object:{refresh:boolean, timeout:number} | No       |
+
+---
+
+#### `pureScroll`
+
+是否启用纯滚动
+
+| Type | Required |
+| ---- | -------- |
+| boolean | No       |
+
+---
+
+#### `overScrollBounce`
+
+是否允许越界回弹
+
+| Type | Required |
+| ---- | -------- |
+| boolean | No       |
+
+---
+
+#### `overScrollDrag`
+
+是否启用越界拖动，类似IOS样式。
+
+| Type | Required |
+| ---- | -------- |
+| boolean | No       |
+
+---
+
+#### `dragRate`
+
+设置组件下拉高度与手指真实下拉高度的比值,默认为0.5。
+
+| Type | Required |
+| ---- | -------- |
+| number | No       |
+
+---
+
+#### `maxDragRate`
+
+设置最大显示下拉高度与header标准高度的比值，默认为2.0。
+
+| Type | Required |
+| ---- | -------- |
+| number | No       |
+
+---
+
+#### `onPullDownToRefresh`
+
+可下拉刷新时触发
+
+| Type | Required |
+| ---- | -------- |
+| function | No       |
+
+---
+
+#### `onReleaseToRefresh`
+
+可释放刷新时触发
+
+| Type | Required |
+| ---- | -------- |
+| function | No       |
+
+---
+
+#### `onRefresh`
+
+刷新时触发
+
+| Type | Required |
+| ---- | -------- |
+| function | No       |
+
+---
+
+#### `onHeaderReleased`
+
+Header释放时触发
+
+| Type | Required |
+| ---- | -------- |
+| function | No       |
+
+---
+
+#### `onHeaderPulling`
+
+```javascript
+   ({nativeEvent: {percent:number, offset:number, headerHeight:number}})=>void;
+```
+header下拉过程中触发
+
+| Type | Required |
+| ---- | -------- |
+| function | No       |
+
+---
+
+#### `onHeaderReleasing`
+
+```javascript
+   ({nativeEvent: {percent:number, offset:number, headerHeight:number}})=>void;
+```
+header释放过程中触发
+
+| Type | Required |
+| ---- | -------- |
+| function | No       |
+
+---
+
+#### `onHeaderMoving`
+
+```javascript
+   ({nativeEvent: {percent:number, offset:number, headerHeight:number}})=>void;
+```
+header移动过程中触发,包括下拉过程和释放过程。
+
+| Type | Required |
+| ---- | -------- |
+| function | No       |
+
+### Methods
+
+#### `finishRefresh`
+
+```javascript
+   finishRefresh([params]);
+```
+
+完成刷新
+
+| Name | Type | Required|
+| ---- | -------- |-----|
+| params | object | NO |
+
+Valid `params` keys are：
+* `delayed` (number) - 延迟完成刷新的时间
+* `success` (boolean) - 是否刷新成功,暂时没有影响
+
+
 
 注意：HeaderComponet现在支持任意的RN组件，但是需要放在AnyHeader的组件中，其中onHeaderPulling、onHeaderReleasing和onHeaderMoving的参数为{nativeEvent:{percent,offset,headerHeight}},可用来控制下拉和释放过程中更为精细的动画
 如果下拉和释放过程不需要过程动画，则使用onPullDownToRefresh和onReleaseToRefresh即可实现，请看示例：Example <br/> [HuaweiRefreshControl](https://github.com/react-native-studio/react-native-SmartRefreshLayout/blob/master/Example/HuaWeiRefreshControl.js)
@@ -136,31 +286,7 @@ import {SmartRefreshControl,DefaultHeader} from 'react-native-smartrefreshlayout
 
 
 建议:该组件与[lottie-react-native](https://github.com/react-community/lottie-react-native)配合使用可获得绝佳的下拉动画效果
-#### 方法表格
-|方法名|参数|描述|
-|:---:|:---:|:---:|
-|finishRefresh|{delayed:number,success:bool}|完成刷新|
 
-### AnyHeader
-#### 属性表格
-|属性名|类型|描述|
-|:---:|:---:|:---:|
-|primaryColor|string|主题色|
-
-### ClassicsHeader/DefaultHeader
-#### 属性表格
-|属性名|类型|描述|
-|:---:|:---:|:---:|
-|primaryColor|string|主题色|
-|accentColor|string|强调色|
-
-### StoreHouseHeader
-#### 属性表格
-|属性名|类型|描述|
-|:---:|:---:|:---:|
-|text|string|文字(目前只支持英文)|
-|textColor|string|文字颜色|
-|lineWidth|number|线宽|
 ## 示例
 <!--![image](https://github.com/2534290808/react-native-android-danmaku/blob/master/images/Screenshot_1513176625.png)-->
 <div align=center>
