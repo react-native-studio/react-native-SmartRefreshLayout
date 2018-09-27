@@ -46,7 +46,7 @@ import {SmartRefreshControl,DefaultHeader} from 'react-native-smartrefreshlayout
 ```
 ## 组件
 ### SmartRefreshControl
-其他组件查看[AnyHeader](./docs/AnyHeader.md)、[DefaultHeader](./docs/DefaualtHeader.md)、[ClassicsHeader](./docs/DefaultHeader.md)、[StoreHouseHeader](./docs/StoreHouse.md)
+其他组件查看[AnyHeader](./docs/AnyHeader.md)、[DefaultHeader](./docs/DefaultHeader.md)、[ClassicsHeader](./docs/DefaultHeader.md)、[StoreHouseHeader](./docs/StoreHouse.md)
 #### 查看属性
 - [`HeaderComponent`](README.md#headercomponent)
 - [`enableRefresh`](README.md#enablerefresh)
