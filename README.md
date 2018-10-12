@@ -3,7 +3,7 @@
 >React-Native-SmartRefreshLayout是基于[Android SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout) 开发的插件
 >,<br>可提供类似ios的弹性刷新,该插件可完全使用React Native进行自定义
 >
->HeaderComponet现在支持任意的RN组件，但是需要放在AnyHeader的组件中，<br>其中onHeaderPulling、onHeaderReleasing和onHeaderMoving的参数为{nativeEvent:{percent,offset,headerHeight}},可用来控制下拉和释放过程中更为精细的动画,<br>
+>HeaderComponent现在支持任意的RN组件，但是需要放在AnyHeader的组件中，<br>其中onHeaderPulling、onHeaderReleasing和onHeaderMoving的参数为{nativeEvent:{percent,offset,headerHeight}},可用来控制下拉和释放过程中更为精细的动画,<br>
 > 如果下拉和释放过程不需要过程动画，则使用onPullDownToRefresh和onReleaseToRefresh即可实现。
 ><br>请看示例：Example <br/> [HuaweiRefreshControl](https://github.com/react-native-studio/react-native-SmartRefreshLayout/blob/master/Example/HuaWeiRefreshControl.js)
 >、 [LottieRefreshControl](https://github.com/react-native-studio/react-native-SmartRefreshLayout/blob/master/Example/LottieRefreshControl.js)
