@@ -134,12 +134,15 @@ import {SmartRefreshControl,DefaultHeader} from 'react-native-smartrefreshlayout
 ---
 
 #### `autoRefresh`
+>***NOTE***
+>
+>time字段含义：延迟time毫秒后自动刷新
 
 是否自动刷新
 
 | Type | Required |
 | ---- | -------- |
-| object:{refresh:boolean, timeout:number} | No       |
+| object:{refresh:boolean, time:number} | No       |
 
 ---
 
