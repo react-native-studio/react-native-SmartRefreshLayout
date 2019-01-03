@@ -60,6 +60,7 @@ import {SmartRefreshControl,DefaultHeader} from 'react-native-smartrefreshlayout
 其他组件查看[AnyHeader](./docs/AnyHeader.md)、[DefaultHeader](./docs/DefaultHeader.md)、[ClassicsHeader](./docs/DefaultHeader.md)、[StoreHouseHeader](./docs/StoreHouse.md)
 #### 查看属性
 - [`HeaderComponent`](README.md#headercomponent)
+- [`renderHeader`](README.md#renderHeader)
 - [`enableRefresh`](README.md#enablerefresh)
 - [`headerHeight`](README.md#headerHeight)
 - [`primaryColor`](README.md#primarycolor)
@@ -96,6 +97,20 @@ import {SmartRefreshControl,DefaultHeader} from 'react-native-smartrefreshlayout
 | Type | Required |
 | ---- | -------- |
 | Element | No       |
+
+---
+
+#### `renderHeader`
+
+用于渲染SmartRefreshLayout组件的header,默认为DefaultHeader。
+
+>**NOTE**
+>
+>必须传入插件中给出的Header组件，如AnyHeader,DefaultHeader等
+
+| Type | Required |
+| ---- | -------- |
+| Element/func | No       |
 
 ---
 
