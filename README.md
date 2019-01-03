@@ -1,4 +1,4 @@
-# React Native SmartRefreshLayout[![npm version](https://badge.fury.io/js/react-native-smartrefreshlayout.svg)](https://badge.fury.io/js/react-native-smartrefreshlayout)
+# React Native SmartRefreshLayout  [![npm version](https://badge.fury.io/js/react-native-smartrefreshlayout.svg)](https://badge.fury.io/js/react-native-smartrefreshlayout)
 
 >React-Native-SmartRefreshLayout是基于[Android SmartRefreshLayout](https://github.com/scwang90/SmartRefreshLayout) 开发的插件
 >,<br>可提供类似ios的弹性刷新,该插件可完全使用React Native进行自定义
