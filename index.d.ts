@@ -1,6 +1,6 @@
 import react, { Component } from "react"
 import {ViewProps} from "react-native";
-interface SmartRefreshLayoutProps extends ViewProps{
+interface SmartRefreshControlProps extends ViewProps{
     onRefresh?:()=>void,
     onHeaderPulling?:(p: RefreshEvent)=>void,
     onHeaderReleasing?:(p: RefreshEvent)=>void,
@@ -9,7 +9,7 @@ interface SmartRefreshLayoutProps extends ViewProps{
     onReleaseToRefresh?:()=>void,
     onHeaderReleased?:()=>void,
     enableRefresh?:boolean,//是否启用下拉刷新功能
-    renderHeader?:()=>React.ReactElement | React.ReactElement,
+    renderHeader?:(()=>React.ReactElement) | React.ReactElement,
     headerHeight?:number,
     overScrollBounce?:boolean,//是否使用越界回弹
     overScrollDrag?:boolean,//是否使用越界拖动，类似IOS样式
@@ -25,7 +25,7 @@ type RefreshEvent = {
 type RefreshNativeEvent = { percent: number, offset:number, headerHeight: number}
 type AutoRefresh = { refresh?:boolean,time?:number }
 type FinishRefreshParams = { delayed?: number, success?:boolean}
-export class SmartRefreshLayout extends Component<SmartRefreshLayoutProps>{
+export class SmartRefreshControl extends Component<SmartRefreshControlProps>{
     finishRefresh:(params?:FinishRefreshParams)=>void
 }
 
