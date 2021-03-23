@@ -1,20 +1,18 @@
-import React, {Component} from 'react';
-import {
-    StyleSheet,
-    View,
-    Text,
-    requireNativeComponent,
-    findNodeHandle,
-    UIManager,
-    NativeModules,
-    Platform,
-    PanResponder,
-} from 'react-native';
-import {ViewPropTypes} from './Util'
-import DefaultHeader from "./DefaultHeader";
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import {
+    findNodeHandle,
+
+    NativeModules,
+
+    PanResponder, Platform, requireNativeComponent,
+
+    UIManager
+} from 'react-native';
 import processColor from 'react-native/Libraries/StyleSheet/processColor';
-import deprecatedPropType from 'react-native/Libraries/Utilities/deprecatedPropType'
+import deprecatedPropType from 'react-native/Libraries/Utilities/deprecatedPropType';
+import DefaultHeader from "./DefaultHeader";
+import { ViewPropTypes } from './Util';
 
 const SPModule =Platform.OS === 'android' ? NativeModules.SpinnerStyleModule : {};
 
@@ -29,6 +27,17 @@ class SmartRefreshControl extends Component {
         "MATCH_LAYOUT":SPModule.matchLayout,
     }
 
+    constructor() {
+        this._panResponder = PanResponder.create({
+            onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
+                if(this.shiftPercent >= 0.039 || this.footerShiftPercent >= 0.068){//满足条件捕获事件
+                    return true
+                }
+                return false;
+            }
+        });
+    }
+
 
     /**
      * 参数格式为{delayed:number,success:bool}
@@ -39,24 +48,15 @@ class SmartRefreshControl extends Component {
     finishRefresh=({delayed=-1,success=true}={delayed:-1,success:true})=>{
         this.dispatchCommand('finishRefresh',[delayed,success])
     }
+
     dispatchCommand=(commandName, params)=>{
         UIManager.dispatchViewManagerCommand(this.findNode(),
             (UIManager.getViewManagerConfig ? UIManager.getViewManagerConfig("SmartRefreshLayout"): UIManager.SmartRefreshLayout).Commands[commandName],
             params);
     }
-    findNode=()=>{
 
+    findNode=()=>{
         return findNodeHandle(this.refs.refreshLayout);
-    }
-    UNSAFE_componentWillMount() {
-        this._panResponder = PanResponder.create({
-            onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
-                if(this.shiftPercent >= 0.039 || this.footerShiftPercent >= 0.068){//满足条件捕获事件
-                    return true
-                }
-                return false;
-            }
-        });
     }
 
     shiftPercent = 0;//header位移百分比，默认为0

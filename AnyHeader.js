@@ -1,14 +1,9 @@
-import React, {Component} from 'react';
-import {
-    StyleSheet,
-    View,
-    Text,
-    requireNativeComponent,
-    findNodeHandle,
-    UIManager,
-} from 'react-native';
 import PropTypes from 'prop-types';
-import {ViewPropTypes} from './Util'
+import React, { Component } from 'react';
+import {
+    requireNativeComponent
+} from 'react-native';
+import { ViewPropTypes } from './Util';
 
 const RCTAnyHeader = requireNativeComponent('RCTAnyHeader', RCTAnyHeader);
 
