@@ -9,8 +9,7 @@ import com.facebook.react.uimanager.annotations.ReactProp;
 /**
  * Created by painter.g on 2018/3/12.
  */
-
-public class DefaultHeaderMananger extends SimpleViewManager<DefaultHeader> {
+public class DefaultHeaderManager extends SimpleViewManager<DefaultHeader> {
     @Override
     public String getName() {
         return "RCTDefaultHeader";

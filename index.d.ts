@@ -25,7 +25,7 @@ type RefreshEvent = {
 type RefreshNativeEvent = { percent: number, offset:number, headerHeight: number}
 type AutoRefresh = { refresh?:boolean,time?:number }
 type FinishRefreshParams = { delayed?: number, success?:boolean}
-export class SmartRefreshLayout extends Component<SmartRefreshLayoutProps>{
+export class SmartRefreshControl extends Component<SmartRefreshLayoutProps>{
     finishRefresh:(params?:FinishRefreshParams)=>void
 }
 
@@ -49,4 +49,3 @@ export class StoreHouseHeader extends Component<StoreHouseHeaderProps>{}
 
 interface AnyHeaderProps extends ViewProps{}
 export class AnyHeader extends Component<AnyHeaderProps>{}
-

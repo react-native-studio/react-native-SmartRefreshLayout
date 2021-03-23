@@ -246,7 +246,7 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
                 writableMap.putDouble("percent",percent);
                 writableMap.putDouble("offset",SmartUtil.px2dp(offset));
                 writableMap.putDouble("headerHeight",SmartUtil.px2dp(headerHeight));
-                mEventEmitter.receiveEvent(getTargetId(),Events.HEADER_PULLING.toString(),writableMap);
+                mEventEmitter.receiveEvent(getTargetId(),Events.HEADER_MOVING.toString(),writableMap);
             }
 
             @Override
