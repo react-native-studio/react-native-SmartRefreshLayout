@@ -25,8 +25,17 @@ export default class ListViewExample1 extends Component {
   };
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, backgroundColor: 'blue'}}>
         <FlatList
+          // nestedScrollEnabled
+          style={{
+            ...StyleSheet.absoluteFillObject,
+            flex: 1,
+            borderRadius: 9,
+            paddingTop: 150,
+            backgroundColor: 'red',
+          }}
+          contentContainerStyle={{flex: 0, paddingBottom: 150}}
           renderHeader={() => (
             <ViewPagerAndroid style={styles.viewPager} initialPage={0}>
               <View style={styles.pageStyle} key="1">
@@ -44,11 +53,15 @@ export default class ListViewExample1 extends Component {
             />
           }
           data={this.state.data}
-          renderRow={rowData => (
+          keyExtractor={item => {
+            return item;
+          }}
+          renderItem={({item}) => (
             <Text
+              key={item}
               onPress={() => alert(111)}
               style={{height: 100, borderColor: 'black', borderWidth: 1}}>
-              {rowData}
+              {item}
             </Text>
           )}
         />

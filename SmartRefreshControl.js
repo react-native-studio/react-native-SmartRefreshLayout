@@ -2,11 +2,10 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import {
     findNodeHandle,
-
     NativeModules,
-
-    PanResponder, Platform, requireNativeComponent,
-
+    PanResponder,
+    Platform,
+    requireNativeComponent,
     UIManager
 } from 'react-native';
 import processColor from 'react-native/Libraries/StyleSheet/processColor';
@@ -28,6 +27,7 @@ class SmartRefreshControl extends Component {
     }
 
     constructor() {
+        super();
         this._panResponder = PanResponder.create({
             onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
                 if(this.shiftPercent >= 0.039 || this.footerShiftPercent >= 0.068){//满足条件捕获事件

@@ -1,6 +1,6 @@
 {
   "name": "@nectr-rn/react-native-smartrefreshlayout",
-  "version": "0.6.8",
+  "version": "0.6.9",
   "description": "Android SmartRefreshLayout",
   "main": "index.js",
   "scripts": {

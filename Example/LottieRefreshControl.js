@@ -4,7 +4,10 @@
 import LottieView from 'lottie-react-native';
 import React, {Component} from 'react';
 import {Animated} from 'react-native';
-import {AnyHeader, SmartRefreshControl} from 'react-native-smartrefreshlayout';
+import {
+  AnyHeader,
+  SmartRefreshControl,
+} from '@nectr-rn/react-native-smartrefreshlayout';
 
 export default class LottieRefreshControl extends Component {
   state = {

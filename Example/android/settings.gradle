@@ -1,3 +1,6 @@
 rootProject.name = 'Example'
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+
+include ':react-native-smartrefreshlayout'
+project(':react-native-smartrefreshlayout').projectDir = new File(rootProject.projectDir, '../node_modules/@nectr-rn/react-native-smartrefreshlayout/android')
 include ':app'

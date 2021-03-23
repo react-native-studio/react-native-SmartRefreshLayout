@@ -4,7 +4,10 @@
 import React, {Component} from 'react';
 import {Animated, Easing, Text} from 'react-native';
 import {SkypeIndicator} from 'react-native-indicators';
-import {AnyHeader, SmartRefreshControl} from 'react-native-smartrefreshlayout';
+import {
+  AnyHeader,
+  SmartRefreshControl,
+} from '@nectr-rn/react-native-smartrefreshlayout';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const AnimatedIcon = Animated.createAnimatedComponent(Icon);
@@ -61,11 +64,11 @@ export default class HuaWeiRefreshControl extends Component {
         onPullDownToRefresh={this._onPullDownToRefresh}
         onHeaderReleased={this._onReleased}
         onReleaseToRefresh={this._onReleaseToRefresh}
-        headerHeight={100}
-        HeaderComponent={
+        headerHeight={150}
+        renderHeader={
           <AnyHeader
             style={{
-              height: 100,
+              height: 150,
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'center',
