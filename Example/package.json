@@ -14,7 +14,7 @@
     "react": "17.0.1",
     "react-native": "0.64.0",
     "react-native-indicators": "^0.17.0",
-    "@nectr-rn/react-native-smartrefreshlayout": "^0.6.11",
+    "@nectr-rn/react-native-smartrefreshlayout": "^0.6.12",
     "react-native-vector-icons": "^8.1.0"
   },
   "devDependencies": {
