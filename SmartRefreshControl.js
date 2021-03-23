@@ -81,7 +81,7 @@ class SmartRefreshControl extends Component {
      * @private
      */
     _onSmartRefresh=()=>{
-        let {onRefresh} = this.props;
+        const {onRefresh} = this.props;
         onRefresh && onRefresh();
     }
     /**
@@ -91,7 +91,7 @@ class SmartRefreshControl extends Component {
      */
     _onHeaderPulling=(event)=>{
         this.shiftPercent = event.nativeEvent.percent;
-        let {onHeaderPulling,onHeaderMoving} = this.props;
+        const {onHeaderPulling,onHeaderMoving} = this.props;
         onHeaderMoving && onHeaderMoving(event);
         onHeaderPulling && onHeaderPulling(event);
     }
@@ -102,7 +102,7 @@ class SmartRefreshControl extends Component {
      */
     _onHeaderReleasing=(event)=>{
         this.shiftPercent = event.nativeEvent.percent;
-        let {onHeaderReleasing,onHeaderMoving} = this.props;
+        const {onHeaderReleasing,onHeaderMoving} = this.props;
         onHeaderMoving && onHeaderMoving(event);
         onHeaderReleasing && onHeaderReleasing(event);
     }

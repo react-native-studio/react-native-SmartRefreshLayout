@@ -246,13 +246,14 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
                 writableMap.putDouble("percent",percent);
                 writableMap.putDouble("offset",SmartUtil.px2dp(offset));
                 writableMap.putDouble("headerHeight",SmartUtil.px2dp(headerHeight));
-                mEventEmitter.receiveEvent(getTargetId(),Events.HEADER_MOVING.toString(),writableMap);
+                mEventEmitter.receiveEvent(getTargetId(),Events.HEADER_PULLING.toString(),writableMap);
             }
 
             @Override
             public void onHeaderReleased(RefreshHeader header, int headerHeight, int extendHeight) {
                 WritableMap writableMap = Arguments.createMap();
                 writableMap.putDouble("headerHeight",SmartUtil.px2dp(headerHeight));
+                writableMap.putDouble("percent",1);
                 mEventEmitter.receiveEvent(getTargetId(),Events.HEADER_RELEASED.toString(),writableMap);
             }
             
