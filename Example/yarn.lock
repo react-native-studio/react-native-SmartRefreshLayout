@@ -933,10 +933,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@nectr-rn/react-native-smartrefreshlayout@^0.6.9":
-  version "0.6.9"
-  resolved "https://registry.yarnpkg.com/@nectr-rn/react-native-smartrefreshlayout/-/react-native-smartrefreshlayout-0.6.9.tgz#ac7c60e4fbe8ef58e386be634ecdc8b2dcc1d2da"
-  integrity sha512-k+i/Wjbt7qVezYY6bKhfpp9zeA5TxCCK9/pUA0qcHuyG7lgldHmEuUdQ7X9e6jC2OvEzRgzsxL4EJc+3X4RrvQ==
+"@nectr-rn/react-native-smartrefreshlayout@^0.6.12":
+  version "0.6.12"
+  resolved "https://registry.yarnpkg.com/@nectr-rn/react-native-smartrefreshlayout/-/react-native-smartrefreshlayout-0.6.12.tgz#baa04dd5308ecf939b3a82b3f3b5621b3fe8d0f2"
+  integrity sha512-+9CAUq5/uR2KDgyTCzzIEpZ+Jz9u64mJXbVArfkb6j6VF/alsxL4D+mLTAck7ZqvnKYS8BoJ9FOotJuvPMGbfg==
   dependencies:
     prop-types "*"
 

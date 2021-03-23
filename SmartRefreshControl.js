@@ -6,7 +6,7 @@ import {
     PanResponder,
     Platform,
     requireNativeComponent,
-    UIManager
+    UIManager,
 } from 'react-native';
 import processColor from 'react-native/Libraries/StyleSheet/processColor';
 import deprecatedPropType from 'react-native/Libraries/Utilities/deprecatedPropType';
