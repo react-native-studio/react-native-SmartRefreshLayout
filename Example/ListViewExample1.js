@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  ViewPagerAndroid,
-  VirtualizedList,
-} from 'react-native';
+import {FlatList, StyleSheet, Text, View, ViewPagerAndroid} from 'react-native';
 import HuaWeiRefreshControl from './HuaWeiRefreshControl';
 
 export default class ListViewExample1 extends Component {
@@ -32,7 +26,7 @@ export default class ListViewExample1 extends Component {
   render() {
     return (
       <View style={{flex: 1, backgroundColor: 'blue'}}>
-        <VirtualizedList
+        <FlatList
           // nestedScrollEnabled
           style={{
             ...StyleSheet.absoluteFillObject,
@@ -58,16 +52,7 @@ export default class ListViewExample1 extends Component {
               onRefresh={this._onRefresh}
             />
           }
-          getItemCount={data => {
-            return data.length;
-          }}
-          getItem={({item}) => {
-            return item;
-          }}
           data={this.state.data}
-          keyExtractor={item => {
-            return item;
-          }}
           renderItem={({item}) => (
             <Text
               key={item}

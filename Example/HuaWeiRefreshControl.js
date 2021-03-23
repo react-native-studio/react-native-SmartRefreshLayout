@@ -64,6 +64,9 @@ export default class HuaWeiRefreshControl extends Component {
         onPullDownToRefresh={this._onPullDownToRefresh}
         onHeaderReleased={this._onReleased}
         onReleaseToRefresh={this._onReleaseToRefresh}
+        onHeaderMoving={e => {
+          console.log(e.nativeEvent.percent);
+        }}
         headerHeight={150}
         renderHeader={
           <AnyHeader
