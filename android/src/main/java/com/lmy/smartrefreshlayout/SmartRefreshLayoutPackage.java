@@ -26,10 +26,7 @@ public class SmartRefreshLayoutPackage implements ReactPackage {
                 new RCTSpinnerStyleModule(reactContext)
         );
     }
-    //@Override >=0.47已经过期
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
-        return Collections.emptyList();
-    }
+
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Arrays.<ViewManager>asList(
