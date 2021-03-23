@@ -48,7 +48,7 @@ class SmartRefreshControl extends Component {
 
         return findNodeHandle(this.refs.refreshLayout);
     }
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this._panResponder = PanResponder.create({
             onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
                 if(this.shiftPercent >= 0.039 || this.footerShiftPercent >= 0.068){//满足条件捕获事件
