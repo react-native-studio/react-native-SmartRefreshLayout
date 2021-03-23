@@ -1,14 +1,14 @@
 {
-  "name": "@nectr-rn/react-native-smartrefreshlayout",
-  "version": "0.6.9",
-  "description": "Android SmartRefreshLayout",
+  "name": "react-native-smartrefreshlayout",
+  "version": "0.6.8",
+  "description": "基于android SmartRefreshLayout的封装",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jp928/react-native-SmartRefreshLayout"
+    "url": "git+https://github.com/react-native-studio/react-native-SmartRefreshLayout.git"
   },
   "keywords": [
     "react",
@@ -29,4 +29,3 @@
     "prop-types":"*"
   }
 }
-
