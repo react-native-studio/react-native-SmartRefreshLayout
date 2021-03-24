@@ -7,7 +7,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.lmy.header.AnyHeaderManager;
 import com.lmy.header.ClassicsHeaderManager;
-import com.lmy.header.DefaultHeaderMananger;
+import com.lmy.header.DefaultHeaderManager;
 import com.lmy.header.MaterialHeaderManager;
 import com.lmy.header.StoreHouseHeaderManager;
 
@@ -26,10 +26,7 @@ public class SmartRefreshLayoutPackage implements ReactPackage {
                 new RCTSpinnerStyleModule(reactContext)
         );
     }
-    //@Override >=0.47已经过期
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
-        return Collections.emptyList();
-    }
+
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Arrays.<ViewManager>asList(
@@ -38,7 +35,7 @@ public class SmartRefreshLayoutPackage implements ReactPackage {
                 new StoreHouseHeaderManager(),
                 new MaterialHeaderManager(),
                 new AnyHeaderManager(),
-                new DefaultHeaderMananger()
-                );
+                new DefaultHeaderManager()
+            );
     }
 }

@@ -1,9 +1,9 @@
 package com.lmy.header;
 
 import android.content.Context;
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -21,8 +21,8 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.internal.ProgressDrawable;
-import com.scwang.smartrefresh.layout.internal.pathview.PathsView;
-import com.scwang.smartrefresh.layout.util.DensityUtil;
+import com.scwang.smartrefresh.header.internal.pathview.PathsView;
+import com.scwang.smartrefresh.layout.util.SmartUtil;
 
 /**
  * Created by painter.g on 2018/3/12.
@@ -59,7 +59,7 @@ public class DefaultHeader extends RelativeLayout implements RefreshHeader {
         rlParent.addRule(RelativeLayout.CENTER_IN_PARENT,RelativeLayout.TRUE);
 
 
-        RelativeLayout.LayoutParams rlArrowView = new RelativeLayout.LayoutParams(DensityUtil.dp2px(20),DensityUtil.dp2px(20));
+        RelativeLayout.LayoutParams rlArrowView = new RelativeLayout.LayoutParams(SmartUtil.dp2px(20),SmartUtil.dp2px(20));
         mArrowView = new PathsView(context);
         mArrowView.setId(R.id.arrow_view);
         mArrowView.parserColors(0xff666666);
@@ -69,12 +69,12 @@ public class DefaultHeader extends RelativeLayout implements RefreshHeader {
 
         RelativeLayout.LayoutParams rlHeaderText= new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         rlHeaderText.addRule(RelativeLayout.RIGHT_OF,mArrowView.getId());
-        rlHeaderText.leftMargin = DensityUtil.dp2px(20);
+        rlHeaderText.leftMargin = SmartUtil.dp2px(20);
         mHeaderText = new TextView(context);
         mHeaderText.setText("下拉开始刷新");
         parent.addView(mHeaderText,rlHeaderText);
 
-        RelativeLayout.LayoutParams rlProgressView = new RelativeLayout.LayoutParams(DensityUtil.dp2px(20),DensityUtil.dp2px(20));
+        RelativeLayout.LayoutParams rlProgressView = new RelativeLayout.LayoutParams(SmartUtil.dp2px(20),SmartUtil.dp2px(20));
         rlProgressView.addRule(RelativeLayout.ALIGN_RIGHT,mArrowView.getId());
         mProgressDrawable = new ProgressDrawable();
         mProgressView = new ImageView(context);
@@ -83,11 +83,11 @@ public class DefaultHeader extends RelativeLayout implements RefreshHeader {
 
 
         addView(parent,rlParent);
-        //addView(mProgressView, DensityUtil.dp2px(20), DensityUtil.dp2px(20));
-        //addView(mArrowView, DensityUtil.dp2px(20), DensityUtil.dp2px(20));
-        //addView(new View(context), DensityUtil.dp2px(20), DensityUtil.dp2px(20));
+        //addView(mProgressView, SmartUtil.dp2px(20), SmartUtil.dp2px(20));
+        //addView(mArrowView, SmartUtil.dp2px(20), SmartUtil.dp2px(20));
+        //addView(new View(context), SmartUtil.dp2px(20), SmartUtil.dp2px(20));
         //addView(mHeaderText, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        setMinimumHeight(DensityUtil.dp2px(60));
+        setMinimumHeight(SmartUtil.dp2px(60));
     }
 
     @NonNull
@@ -145,7 +145,12 @@ public class DefaultHeader extends RelativeLayout implements RefreshHeader {
     @Override
     public void onInitialized(RefreshKernel kernel, int height, int extendHeight) {
         mRefreshKernel = kernel;
-        mRefreshKernel.requestDrawBackgroundForHeader(mBackgroundColor);
+        mRefreshKernel.requestDrawBackgroundFor(this, mBackgroundColor);
+
+    }
+
+    @Override
+    public void onMoving(boolean isDragging, float percent, int offset, int height, int maxDragHeight) {
 
     }
 
@@ -153,13 +158,6 @@ public class DefaultHeader extends RelativeLayout implements RefreshHeader {
     public void onHorizontalDrag(float percentX, int offsetX, int offsetMax) {
     }
 
-    @Override
-    public void onPulling(float percent, int offset, int headHeight, int extendHeight) {
-    }
-
-    @Override
-    public void onReleasing(float percent, int offset, int headHeight, int extendHeight) {
-    }
 
     @Override
     public void onReleased(RefreshLayout refreshLayout, int height, int extendHeight) {
@@ -173,7 +171,8 @@ public class DefaultHeader extends RelativeLayout implements RefreshHeader {
     public DefaultHeader setPrimaryColor(@ColorInt int primaryColor) {
         mBackgroundColor = primaryColor;
         if (mRefreshKernel != null) {
-            mRefreshKernel.requestDrawBackgroundForHeader(primaryColor);
+            mRefreshKernel.requestDrawBackgroundFor(this, primaryColor);
+//            mRefreshKernel.requestDrawBackgroundForHeader(primaryColor);
         }
         return this;
     }

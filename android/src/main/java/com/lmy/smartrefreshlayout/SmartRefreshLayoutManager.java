@@ -19,7 +19,7 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
-import com.scwang.smartrefresh.layout.util.DensityUtil;
+import com.scwang.smartrefresh.layout.util.SmartUtil;
 
 import java.util.List;
 import java.util.Map;
@@ -178,7 +178,7 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
                 int delayed=args.getInt(0);
                 boolean success=args.getBoolean(1);
                 if(delayed>=0){
-                    root.finishRefresh(delayed,success);
+                    root.finishRefresh(delayed, success, true);
                 }else{
                     root.finishRefresh(success);
                 }
@@ -241,45 +241,37 @@ public class SmartRefreshLayoutManager extends ViewGroupManager<ReactSmartRefres
             }
 
             @Override
-            public void onHeaderPulling(RefreshHeader header, float percent, int offset, int headerHeight, int extendHeight) {
+            public void onHeaderMoving( RefreshHeader header, boolean isDragging, float percent, int offset, int headerHeight, int maxDragHeight) {
                 WritableMap writableMap = Arguments.createMap();
                 writableMap.putDouble("percent",percent);
-                writableMap.putDouble("offset",DensityUtil.px2dp(offset));
-                writableMap.putDouble("headerHeight",DensityUtil.px2dp(headerHeight));
+                writableMap.putDouble("offset",SmartUtil.px2dp(offset));
+                writableMap.putDouble("headerHeight",SmartUtil.px2dp(headerHeight));
                 mEventEmitter.receiveEvent(getTargetId(),Events.HEADER_PULLING.toString(),writableMap);
             }
 
             @Override
             public void onHeaderReleased(RefreshHeader header, int headerHeight, int extendHeight) {
                 WritableMap writableMap = Arguments.createMap();
-                writableMap.putDouble("headerHeight",DensityUtil.px2dp(headerHeight));
+                writableMap.putDouble("headerHeight",SmartUtil.px2dp(headerHeight));
+                writableMap.putDouble("percent",1);
                 mEventEmitter.receiveEvent(getTargetId(),Events.HEADER_RELEASED.toString(),writableMap);
             }
-
+            
             @Override
-            public void onHeaderReleasing(RefreshHeader header, float percent, int offset, int headerHeight, int extendHeight) {
+            public void onFooterMoving(RefreshFooter footer, boolean isDragging, float percent, int offset, int footerHeight, int maxDragHeight) {
                 WritableMap writableMap = Arguments.createMap();
                 writableMap.putDouble("percent",percent);
-                writableMap.putDouble("offset",DensityUtil.px2dp(offset));
-                writableMap.putDouble("headerHeight",DensityUtil.px2dp(headerHeight));
-                mEventEmitter.receiveEvent(getTargetId(),Events.HEADER_RELEASING.toString(),writableMap);
-            }
-
-            @Override
-            public void onFooterPulling(RefreshFooter footer, float percent, int offset, int footerHeight, int extendHeight) {
-                WritableMap writableMap = Arguments.createMap();
-                writableMap.putDouble("percent",percent);
-                writableMap.putDouble("offset",DensityUtil.px2dp(offset));
-                writableMap.putDouble("footerHeight",DensityUtil.px2dp(footerHeight));
+                writableMap.putDouble("offset",SmartUtil.px2dp(offset));
+                writableMap.putDouble("footerHeight",SmartUtil.px2dp(footerHeight));
                 mEventEmitter.receiveEvent(getTargetId(),Events.FOOTER_MOVING.toString(),writableMap);
             }
 
             @Override
-            public void onFooterReleasing(RefreshFooter footer, float percent, int offset, int footerHeight, int extendHeight) {
+            public void onFooterReleased(RefreshFooter footer, int footerHeight, int maxDragHeight) {
                 WritableMap writableMap = Arguments.createMap();
-                writableMap.putDouble("percent",percent);
-                writableMap.putDouble("offset",DensityUtil.px2dp(offset));
-                writableMap.putDouble("footerHeight",DensityUtil.px2dp(footerHeight));
+                writableMap.putDouble("percent",1);
+                writableMap.putDouble("offset",SmartUtil.px2dp(maxDragHeight - footerHeight));
+                writableMap.putDouble("footerHeight",SmartUtil.px2dp(footerHeight));
                 mEventEmitter.receiveEvent(getTargetId(),Events.FOOTER_MOVING.toString(),writableMap);
             }
 

@@ -1,14 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
-    StyleSheet,
-    View,
-    Text,
     requireNativeComponent,
-    ViewPropTypes,
-    findNodeHandle,
-    UIManager,
+    ViewPropTypes
 } from 'react-native';
-import PropTypes from 'prop-types';
 
 const RCTMaterialHeader = requireNativeComponent('RCTMaterialHeader', RCTMaterialHeader);
 

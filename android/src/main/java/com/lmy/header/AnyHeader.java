@@ -2,8 +2,8 @@ package com.lmy.header;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
 import android.view.View;
 
 import com.facebook.react.views.view.ReactViewGroup;
@@ -12,7 +12,7 @@ import com.scwang.smartrefresh.layout.api.RefreshKernel;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.constant.RefreshState;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
-import com.scwang.smartrefresh.layout.util.DensityUtil;
+import com.scwang.smartrefresh.layout.util.SmartUtil;
 
 /**anyview
  * Created by painter.g on 2018/3/9.
@@ -31,10 +31,16 @@ public class AnyHeader extends ReactViewGroup implements RefreshHeader {
     @Override
     public void onInitialized(@NonNull RefreshKernel kernel, int height, int extendHeight) {
         mRefreshKernel = kernel;
-        mRefreshKernel.requestDrawBackgroundForHeader(mBackgroundColor);
+        mRefreshKernel.requestDrawBackgroundFor(this, mBackgroundColor);
     }
+
+    @Override
+    public void onMoving(boolean isDragging, float percent, int offset, int height, int maxDragHeight) {
+
+    }
+
     private void initView(Context context) {
-        setMinimumHeight(DensityUtil.dp2px(60));
+        setMinimumHeight(SmartUtil.dp2px(60));
     }
     public void setView(View v){
         addView(v);
@@ -66,7 +72,7 @@ public class AnyHeader extends ReactViewGroup implements RefreshHeader {
     public AnyHeader setPrimaryColor(@ColorInt int primaryColor) {
         mBackgroundColor = mPrimaryColor =primaryColor;
         if (mRefreshKernel != null) {
-            mRefreshKernel.requestDrawBackgroundForHeader(mPrimaryColor);
+            mRefreshKernel.requestDrawBackgroundFor(this, mPrimaryColor);
         }
         return this;
     }
@@ -74,15 +80,6 @@ public class AnyHeader extends ReactViewGroup implements RefreshHeader {
     public AnyHeader setSpinnerStyle(SpinnerStyle style){
         this.mSpinnerStyle = style;
         return this;
-    }
-    @Override
-    public void onPulling(float percent, int offset, int height, int extendHeight) {
-
-    }
-
-    @Override
-    public void onReleasing(float percent, int offset, int height, int extendHeight) {
-
     }
 
     @Override
