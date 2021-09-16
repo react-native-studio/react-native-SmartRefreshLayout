@@ -1,4 +1,4 @@
-import react, { Component } from "react"
+import React, { Component } from "react"
 import {ViewProps} from "react-native";
 interface SmartRefreshLayoutProps extends ViewProps{
     onRefresh?:()=>void,
